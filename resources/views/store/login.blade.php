@@ -37,8 +37,9 @@
                                 <h2>Đăng nhập</h2>
                                 <form action="#" method="post">
                                     @csrf
+
                                     <div class="single-input-item">
-                                        <input type="text" name="username" placeholder="Email or Username" required  />
+                                        <input type="email" name="email" placeholder="Email or Username" required  />
                                     </div>
                                     <div class="single-input-item">
                                         <input type="password" name="password" placeholder="Enter your Password" required />
