@@ -39,7 +39,7 @@ Route::group(['prefix' => 'checkout'], function (){
     Route::post('/','store\CheckoutController@submit_form');
 });
 //Route::group(['prefix' => 'product'], function (){
-//    Route::get('details', 'store.ProductController@details')->name('details');
+// ggg   Route::get('details', 'store.ProductController@details')->name('details');
 //});
 
 
