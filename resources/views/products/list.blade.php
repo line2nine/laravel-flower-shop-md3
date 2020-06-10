@@ -39,12 +39,12 @@
                             @forelse($products as $key=>$product)
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
-                                    <td><img src="{{$product->image}}" alt="avatar"></td>
+                                    <td><img src="{{asset('storage/'.$product->image)}}" class="avatar" alt="avatar"></td>
                                     <td>{{$product->name}}</td>
                                     <td>{{$product->price}}</td>
                                     <td>{{$product->category->name}}</td>
                                     <td>
-                                        <a class="btn btn-success" href="#">Edit</a>
+                                        <a class="btn btn-success" href="{{route('product.edit',['id'=>$product->id])}}">Edit</a>
                                         <a class="btn btn-success">Detail</a>
                                         <a class="btn btn-danger" href="#"
                                            onclick="return confirm('Are you sure to delete?')">Delete</a>
