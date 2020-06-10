@@ -20,9 +20,12 @@
     <link href="{{asset('/css/sidebar-menu.css')}}" rel="stylesheet"/>
     <!-- Custom Style-->
     <link href="{{asset('/css/app-style.css')}}" rel="stylesheet"/>
+    @notify_css
+    @notify_js
     <title>Dashboard</title>
 </head>
 <body class="bg-theme bg-theme2">
+@include('sweetalert::alert')
 <!-- start loader -->
 <div id="pageloader-overlay" class="visible incoming">
     <div class="loader-wrapper-outer">
@@ -44,7 +47,7 @@
     @include('admin.core.footer')
 </div>
 
-
+@notify_render
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('/js/jquery.min.js')}}"></script>
 <script src="{{asset('/js/popper.min.js')}}"></script>
