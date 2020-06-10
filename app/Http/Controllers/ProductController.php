@@ -58,4 +58,18 @@ class ProductController extends Controller
 
         return redirect()->route('product.index');
     }
+
+    public function destroy($id)
+    {
+        $product = $this->productService->find($id);
+        $product->delete();
+        Session::flash('success','Delete Completed');
+        return redirect()->route('product.index');
+    }
+
+    public function detail($id)
+    {
+        $product = $this->productService->find($id);
+        return view('products.detail',compact('product'));
+    }
 }

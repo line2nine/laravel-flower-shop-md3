@@ -45,8 +45,8 @@
                                     <td>{{$product->category->name}}</td>
                                     <td>
                                         <a class="btn btn-success" href="{{route('product.edit',['id'=>$product->id])}}">Edit</a>
-                                        <a class="btn btn-success">Detail</a>
-                                        <a class="btn btn-danger" href="#"
+                                        <a class="btn btn-success" href="{{ route('product.detail',['id'=>$product->id]) }}">Detail</a>
+                                        <a class="btn btn-danger" href="{{route('product.delete',['id'=>$product->id])}}"
                                            onclick="return confirm('Are you sure to delete?')">Delete</a>
                                     </td>
                                 </tr>
