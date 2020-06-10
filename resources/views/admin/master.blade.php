@@ -22,7 +22,7 @@
     <link href="{{asset('/css/app-style.css')}}" rel="stylesheet"/>
     <title>Dashboard</title>
 </head>
-<body>
+<body class="bg-theme bg-theme2">
 <!-- start loader -->
 <div id="pageloader-overlay" class="visible incoming">
     <div class="loader-wrapper-outer">
