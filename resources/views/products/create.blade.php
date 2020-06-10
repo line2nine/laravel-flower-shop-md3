@@ -16,8 +16,13 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">Create Product</div>
+                    @if(\Illuminate\Support\Facades\Session::has('success'))
+                        <p class="text-success">
+                            <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
+                        </p>
+                    @endif
                     <hr>
-                    <form method="post" action="{{route('product.store')}}">
+                    <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="input-1">Name Product</label>

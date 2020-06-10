@@ -6,6 +6,7 @@ namespace App\Http\Services;
 
 use App\Http\Repositories\ProductRepository;
 use App\Product;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class ProductService
@@ -41,22 +42,22 @@ class ProductService
         $productRepo->description = $request->description;
 
         $this->productRepo->save($productRepo);
+
     }
 
     public function update($productRepo, $request)
     {
         $productRepo->name = $request->name;
-        $productRepo->description = $request->description;
-        $productRepo->detail = $request->detail;
         $productRepo->price = $request->price;
         $oldFilePath = $productRepo->image;
-        $newFilePath = $request->image;
-        if ($oldFilePath !== 'images/default-product.jpg' && $newFilePath !== null) {
-            Storage::delete("public/" . $oldFilePath);
-        }
         if ($request->hasFile('image')) {
+            Storage::delete("public/" . $oldFilePath);
             $productRepo->image = $request->image->store('images', 'public');
         }
+
+        $productRepo->category_id = $request->category;
+        $productRepo->description = $request->description;
+
         $this->productRepo->save($productRepo);
     }
 
