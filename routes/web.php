@@ -48,6 +48,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('admin.logout');
     Route::get('dashboard', 'UserController@showDashboard')->name('admin.dashboard');
     Route::group(['prefix' => 'user'], function () {
+        Route::get('list', 'UserController@getAll')->name('user.list');
         Route::get('create-new', 'UserController@create')->name('user.create');
         Route::post('create-new', 'UserController@store');
         Route::get('{id}/change-password', 'UserController@changePass')->name('user.changePass');
