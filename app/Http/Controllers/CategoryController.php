@@ -46,4 +46,11 @@ class CategoryController extends Controller
         \Illuminate\Support\Facades\Session::flash('success','Add Completed');
         return redirect()->route('category.create');
     }
+
+    public function destroy($id){
+        $category = $this->categoryService->find($id);
+        $category->delete();
+        \Illuminate\Support\Facades\Session::flash('success','Delete Completed');
+        return redirect()->route('category.index');
+    }
 }

@@ -31,14 +31,15 @@ class ProductService
     {
         $productRepo = new Product();
         $productRepo->name = $request->name;
-        $productRepo->description = $request->description;
-        $productRepo->detail = $request->detail;
         $productRepo->price = $request->price;
         if ($request->hasFile('image')) {
             $productRepo->image = $request->image->store('images', 'public');
         } else {
             $productRepo->image = 'images/default-product.jpg';
         }
+        $productRepo->category_id = $request->category;
+        $productRepo->description = $request->description;
+
         $this->productRepo->save($productRepo);
     }
 

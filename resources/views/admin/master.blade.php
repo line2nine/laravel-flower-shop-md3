@@ -20,6 +20,7 @@
     <link href="{{asset('/css/sidebar-menu.css')}}" rel="stylesheet"/>
     <!-- Custom Style-->
     <link href="{{asset('/css/app-style.css')}}" rel="stylesheet"/>
+    <link href="{{asset('/css/user-avatar.css')}}" rel="stylesheet"/>
     @notify_css
     @notify_js
     <title>Dashboard</title>
