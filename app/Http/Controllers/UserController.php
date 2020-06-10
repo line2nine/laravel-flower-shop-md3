@@ -58,4 +58,10 @@ class UserController extends Controller
         }
         return back()->with('error', 'Wrong current password, try again');
     }
+
+    function userDetail($id)
+    {
+        $user = $this->userService->find($id);
+        return view('users.detail', compact('user'));
+    }
 }

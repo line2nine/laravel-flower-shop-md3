@@ -49,7 +49,7 @@
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-round px-2" href="#"><i class="icon-size-fullscreen"></i>
+                                        <a class="btn btn-primary btn-round px-2" href="{{route('user.detail', $user->id)}}"><i class="icon-size-fullscreen"></i>
                                             Profile
                                         </a>
                                         <a class="btn btn-warning btn-round px-2" href="#"><i class="icon-settings"></i>

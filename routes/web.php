@@ -53,6 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('create-new', 'UserController@store');
         Route::get('{id}/change-password', 'UserController@changePass')->name('user.changePass');
         Route::post('{id}/change-password', 'UserController@updatePass');
+        Route::get('{id}/detail', 'UserController@userDetail')->name('user.detail');
     });
     Route::prefix('category')->group(function (){
         Route::get('/','CategoryController@index')->name('category.index');
