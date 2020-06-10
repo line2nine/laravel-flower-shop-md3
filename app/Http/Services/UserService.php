@@ -36,6 +36,8 @@ class UserService
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
         $user->password = Hash::make($request->password);
         $user->role = $request->role;
         if ($request->hasFile('image')) {
