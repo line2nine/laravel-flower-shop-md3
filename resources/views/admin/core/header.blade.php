@@ -147,7 +147,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-                        <span class="user-profile"><img src="assets/images/avatars/avatar-13.png" class="img-circle"
+                        <span class="user-profile"><img src="{{asset('storage/' . auth()->user()->image)}}" class="img-circle"
                                                         alt="user avatar"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
@@ -155,11 +155,11 @@
                         <a href="javaScript:void();">
                             <div class="media">
                                 <div class="avatar"><img class="align-self-start mr-3"
-                                                         src="assets/images/avatars/avatar-13.png"
+                                                         src="{{asset('storage/' . auth()->user()->image)}}"
                                                          alt="user avatar"></div>
                                 <div class="media-body">
-                                    <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-                                    <p class="user-subtitle">mccoy@example.com</p>
+                                    <h6 class="mt-2 user-title">{{auth()->user()->name}}</h6>
+                                    <p class="user-subtitle">{{auth()->user()->email}}</p>
                                 </div>
                             </div>
                         </a>

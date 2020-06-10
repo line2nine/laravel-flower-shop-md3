@@ -8,7 +8,7 @@
     <div class="user-details">
         <div class="media align-items-center user-pointer collapsed" data-toggle="collapse"
              data-target="#user-dropdown">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center">
                 @if(\Illuminate\Support\Facades\Auth::check())
                 <h6 class="side-user-name">{{strtoupper(auth()->user()->name)}}</h6>
                 @endif
@@ -17,9 +17,9 @@
         <div id="user-dropdown" class="collapse">
             <ul class="user-setting-menu">
                 @if(\Illuminate\Support\Facades\Auth::check())
-                <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+                <li><a href="#"><i class="icon-user"></i>My Profile</a></li>
                 <li><a href="{{route('user.changePass', auth()->user()->id)}}"><i
-                            class="icon-settings"></i> Change Password</a></li>
+                            class="icon-settings"></i>Change Password</a></li>
                 <li><a href="{{route('admin.logout')}}"><i class="icon-power"></i>Logout</a></li>
                 @endif
             </ul>
@@ -41,13 +41,6 @@
                 <li><a href="dashboard-logistics.html"><i class="zmdi zmdi-long-arrow-right"></i> Logistics</a></li>
             </ul>
         </li>
-
-        <li>
-            <a href="calendar.html" class="waves-effect">
-                <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
-                <small class="badge float-right badge-light">New</small>
-            </a>
-        </li>
         <!-- -------------------------------------form----------------------------------------------------------------------- -->
         <li>
             <a href="#" class="waves-effect">
@@ -55,7 +48,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="#"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
+                <li><a href="{{route('user.list')}}"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
                 <li><a href="{{route('user.create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create New</a></li>
 
             </ul>
@@ -109,6 +102,12 @@
             </ul>
         </li>
 
+        <li>
+            <a href="calendar.html" class="waves-effect">
+                <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
+                <small class="badge float-right badge-light">New</small>
+            </a>
+        </li>
         <!-- -------------------------------- -->
         <li class="sidebar-header">LABELS</li>
         <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a>
