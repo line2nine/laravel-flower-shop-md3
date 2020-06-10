@@ -56,8 +56,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="#"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
-                <li><a href="#"><i class="zmdi zmdi-long-arrow-right"></i>Create New</a></li>
+                <li><a href="{{route('category.index')}}"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
+                <li><a href="{{route('category.create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create New</a></li>
 
             </ul>
         </li>
@@ -68,8 +68,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href=""><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
-                <li><a href=""><i class="zmdi zmdi-long-arrow-right"></i>Create</a></li>
+                <li><a href="{{route('product.index')}}"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
+                <li><a href="{{route('product.create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create</a></li>
             </ul>
         </li>
 
