@@ -48,7 +48,18 @@
                 <small class="badge float-right badge-light">New</small>
             </a>
         </li>
+        <!-- -------------------------------------form----------------------------------------------------------------------- -->
+        <li>
+            <a href="#" class="waves-effect">
+                <i class="zmdi zmdi-format-list-bulleted"></i> <span>Users</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="#"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
+                <li><a href="{{route('user.create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create New</a></li>
 
+            </ul>
+        </li>
         <!-- -------------------------------------form----------------------------------------------------------------------- -->
         <li>
             <a href="#" class="waves-effect">

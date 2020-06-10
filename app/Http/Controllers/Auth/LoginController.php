@@ -25,7 +25,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($user)) {
-            notify("Long time no see, let shop!!!", 'success', 'Welcome!');
+            notify("Long time no see, let work!!!", 'success', 'Welcome!');
             return redirect()->route('admin.dashboard');
         } else {
             notify('Please re-check email or password', 'error', 'Something wrong!');
