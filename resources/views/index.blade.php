@@ -318,8 +318,8 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="{{route('wishlist')}}" data-toggle="tooltip" data-placement="left" title="Yêu thích"><i class="lnr lnr-heart"></i></a>
-                                    <a href="{{route('product.details')}}" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Xem chi tiết"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="{{route('wishlist.add',['id'=>$product->id])}}" data-toggle="tooltip" data-placement="left" title="Yêu thích"><i class="lnr lnr-heart"></i></a>
+                                    <a href="" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Xem chi tiết"><i class="lnr lnr-magnifier"></i></span></a>
                                     <a href="{{route('cart.add',['id'=>$product->id])}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giỏ hàng"><i class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>

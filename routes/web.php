@@ -15,19 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'store\HomeController@index')->name('index');
 Route::get('login', 'store\AuthController@showFormLogin')->name('login');
-//    Route::post('login','store\AuthController@UserLogin');
-
-
-Route::get('register', 'Frontend\UserRegisterController@register')->name('register');
-Route::post('register', 'Frontend\UserRegisterController@store')->name('register.store');
-Route::get('account', 'Frontend\AccountController@account')->name('account');
-Route::get('forgot', 'Frontend\ForgotPassword@forgot')->name('forgot');
-Route::post('forgot', 'Frontend\ForgotPassword@update')->name('update');
-Route::get('logout', 'Frontend\ForgotPassword@logout')->name('logout');
-Route::get('logout', 'Frontend\ForgotPassword@logout')->name('logout');
-Route::get('product-details', 'Frontend\HomeController@productDetails')->name('product.details');
-Route::get('wishlist', 'Frontend\HomeController@wishlist')->name('wishlist');
-
+Route::post('login','store\AuthController@UserLogin');
+Route::get('register', 'store\AuthController@register')->name('register');
+Route::post('register', 'store\AuthController@store');
+Route::get('account', 'store\AuthController@account')->name('account');
+Route::get('forgot', 'store\AuthController@forgot')->name('forgot');
+Route::post('forgot', 'store\AuthController@update')->name('update');
+Route::get('logout', 'store\AuthController@logout')->name('logout');
+Route::get('wishlist', 'store\WishlistController@wishlist')->name('wishlist');
+Route::group(['prefix' => 'wishlist'], function (){
+    Route::get('wishlist/{id}', 'store\WishlistController@add')->name('wishlist.add');
+});
 
 Route::group(['prefix' => 'cart'], function () {
     Route::get('add/{id}', 'store\CartController@add')->name('cart.add');
@@ -36,11 +34,20 @@ Route::group(['prefix' => 'cart'], function () {
     Route::get('clear', 'store\CartController@clear')->name('cart.clear');
     Route::get('update/{id}', 'store\CartController@update')->name('cart.update');
 });
-//Route::group(['prefix' => 'checkout'], function (){
-//    Route::get('/','Frontend\CheckoutController@form')->name('checkout');
-//    Route::post('/','Frontend\CheckoutController@submit_form')->name('checkout');
-//    Route::get('/checkout-success','Frontend\CheckoutController@success')->name('checkout.success');
+Route::group(['prefix' => 'checkout'], function (){
+    Route::get('/','store\CheckoutController@form')->name('checkout');
+    Route::post('/','store\CheckoutController@submit_form');
+});
+//Route::group(['prefix' => 'product'], function (){
+// ggg   Route::get('details', 'store.ProductController@details')->name('details');
 //});
+
+
+
+
+
+
+
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');

@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use App\Cart\Cart;
+use App\Cart\wishlist;
+use App\Order;
+use App\OrderDetail;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,11 +33,24 @@ class AppServiceProvider extends ServiceProvider
             ]);
 
         });
-//        view()->composer('*', function($view){
-//            $view->with([
-//                'user' => new User()
-//            ]);
-//
-//        });
+
+        view()->composer('*', function($view){
+            $view->with([
+                'order' => new Order()
+            ]);
+
+        });
+        view()->composer('*', function($view){
+            $view->with([
+                'orderDetail' => new OrderDetail()
+            ]);
+
+        });
+        view()->composer('*', function($view){
+            $view->with([
+                'wishlist' => new wishlist()
+            ]);
+
+        });
     }
 }

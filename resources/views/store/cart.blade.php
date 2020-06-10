@@ -95,9 +95,9 @@
 
                                     </div>
                                 </div>
-                                @if(!\Illuminate\Support\Facades\Auth::check()){
+                                @if(!\Illuminate\Support\Facades\Auth::check())
                                 <a href="{{route('login')}}" class="btn btn__bg d-block"  style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">Đăng nhập để mua hàng</a>
-                                }@else
+                                @else
                                 <a href="{{route('checkout')}}" class="btn btn__bg d-block"  style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">CheckOut</a>
                                 @endif
                             </div>
