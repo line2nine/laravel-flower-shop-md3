@@ -9,15 +9,19 @@
         <div class="media align-items-center user-pointer collapsed" data-toggle="collapse"
              data-target="#user-dropdown">
             <div class="media-body">
-                <h6 class="side-user-name">ABC</h6>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                <h6 class="side-user-name">{{strtoupper(auth()->user()->name)}}</h6>
+                @endif
             </div>
         </div>
         <div id="user-dropdown" class="collapse">
             <ul class="user-setting-menu">
+                @if(\Illuminate\Support\Facades\Auth::check())
                 <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
-                <li><a href="#"><i
+                <li><a href="{{route('user.changePass', auth()->user()->id)}}"><i
                             class="icon-settings"></i> Change Password</a></li>
-                <li><a href="#"><i class="icon-power"></i>Logout</a></li>
+                <li><a href="{{route('admin.logout')}}"><i class="icon-power"></i>Logout</a></li>
+                @endif
             </ul>
         </div>
     </div>
