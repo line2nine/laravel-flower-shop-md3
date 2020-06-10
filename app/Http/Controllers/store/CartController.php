@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Cart;
+namespace App\Http\Controllers\store;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,7 +9,6 @@ use App\Product;
 
 class CartController extends Controller
 {
-
 
     public function add(Cart $cart, $id){
         $products = Product::find($id);
@@ -39,9 +38,7 @@ class CartController extends Controller
     }
 
     public function view(){
-        return view('frontend.cart');
+        return view('store.cart');
 
     }
-
 }
-
