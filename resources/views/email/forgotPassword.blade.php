@@ -10,6 +10,9 @@
 <body>
 <form method="post" action="{{route('mail.send')}}">
     @csrf
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <p>{{\Illuminate\Support\Facades\Session::get('success')}}</p>
+    @endif
     <label>Enter your email</label>
     <input type="email" name="email" placeholder="email">
     <button type="submit"> Send </button>
