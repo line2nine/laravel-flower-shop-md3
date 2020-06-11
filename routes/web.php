@@ -23,8 +23,12 @@ Route::get('forgot', 'store\AuthController@forgot')->name('forgot');
 Route::post('forgot', 'store\AuthController@update')->name('update');
 Route::get('logout', 'store\AuthController@logout')->name('logout');
 Route::get('wishlist', 'store\WishlistController@wishlist')->name('wishlist');
+
 Route::group(['prefix' => 'wishlist'], function (){
+    Route::get('/', 'store\WishlistController@view')->name('wishlist');
     Route::get('wishlist/{id}', 'store\WishlistController@add')->name('wishlist.add');
+    Route::get('remove/{id}', 'store\WishlistController@remove')->name('wishlist.remove');
+
 });
 
 Route::group(['prefix' => 'cart'], function () {
@@ -58,6 +62,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('list', 'UserController@getAll')->name('user.list');
         Route::get('create-new', 'UserController@create')->name('user.create');
         Route::post('create-new', 'UserController@store');
+        Route::get('{id}/edit', 'UserController@edit')->name('user.edit');
+        Route::post('{id}/edit', 'UserController@update');
         Route::get('{id}/change-password', 'UserController@changePass')->name('user.changePass');
         Route::post('{id}/change-password', 'UserController@updatePass');
         Route::get('{id}/detail', 'UserController@userDetail')->name('user.detail');

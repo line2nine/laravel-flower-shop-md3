@@ -70,6 +70,7 @@ class AuthController extends Controller
 
 
     public function account(){
+
         if (Auth::check()){
             $account = Auth::user();
             return view('store.account', compact('account'));

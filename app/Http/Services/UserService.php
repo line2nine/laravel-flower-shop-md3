@@ -54,6 +54,9 @@ class UserService
     {
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->status = $request->status;
         $oldFilePath = $user->image;
         $newFilePath = $request->image;
         if ($oldFilePath !== 'images/default-avatar.png' && $oldFilePath !== 'images/default-admin.png' && $newFilePath !== null) {
@@ -61,9 +64,6 @@ class UserService
         }
         if ($request->hasFile('image')) {
             $user->image = $request->image->store('images', 'public');
-        }
-        if (Auth::user()->role == Role::ADMIN) {
-            $user->role = $request->role;
         }
         $this->userRepo->save($user);
     }

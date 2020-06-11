@@ -7,7 +7,6 @@ namespace App\Cart;
 class Cart
 {
     public $items = [];
-
     public $total_quantity = 0;
     public $total_price = 0;
 

@@ -222,7 +222,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="wishlist.html">
+                                        <a href="{{route('wishlist')}}">
                                             <i class="lnr lnr-heart"></i>
                                             <div class="notification">0</div>
                                         </a>
@@ -756,7 +756,7 @@
 
                 <div class="minicart-button">
                     <a href="{{route('cart.view')}}" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" ><i class="fa fa-shopping-cart"></i>Xem giõ hàng</a>
-{{--                    <a href="{{route('checkout')}}"><i class="fa fa-share"></i> checkout</a>--}}
+                    {{--                    <a href="{{route('checkout')}}"><i class="fa fa-share"></i> checkout</a>--}}
                 </div>
             </div>
         </div>
@@ -776,5 +776,4 @@
 <script src="{{asset('assets/js/active.js')}}"></script>
 </body>
 </html>
-
 
