@@ -229,7 +229,7 @@
 
                             <!-- product item list wrapper start -->
                             <div class="shop-product-wrap grid-view row mbn-40">
-                                <!-- product single item start -->
+                                <!-- product single item hhhstart -->
                                @foreach($products as $product)
                                 <div class="col-md-4 col-sm-6">
                                     <!-- product grid start -->
