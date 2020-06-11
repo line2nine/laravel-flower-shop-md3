@@ -19,6 +19,14 @@ class ProductRepository
     {
         return $this->product->all();
     }
+    public function getProductDetails()
+    {
+        return $this->product->all();
+    }
+    public function getAllShop()
+    {
+        return $this->product->paginate(9);
+    }
 
     public function find($id)
     {
