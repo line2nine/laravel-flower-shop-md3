@@ -43,12 +43,6 @@ Route::group(['prefix' => 'checkout'], function (){
 //});
 
 
-
-
-
-
-
-
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
     Route::post('login', 'Auth\LoginController@login');
