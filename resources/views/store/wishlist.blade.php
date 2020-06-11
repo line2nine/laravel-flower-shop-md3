@@ -43,7 +43,7 @@
                                             <th class="pro-thumbnail">Thumbnail</th>
                                             <th class="pro-title">Product</th>
                                             <th class="pro-price">Price</th>
-{{--                                            <th class="pro-quantity">Stock Status</th>--}}
+{{--                                            <th class="pro-quantity">Stock UserStatus</th>--}}
                                             <th class="pro-subtotal">Add to Cart</th>
                                             <th class="pro-remove">Remove</th>
                                         </tr>

@@ -9,6 +9,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -81,5 +82,17 @@ class UserController extends Controller
     {
         $user = $this->userService->find($id);
         return view('users.detail', compact('user'));
+    }
+
+    function delete($id)
+    {
+        $user = $this->userService->find($id);
+        $filePath = $user->image;
+        $user->delete();
+        if ($filePath !== 'images/default-avatar.png' && $filePath !== 'images/default-admin.png') {
+            Storage::delete("public/" . $filePath);
+        }
+        notify("Deleted user $user->name", 'success');
+        return redirect()->route('user.list');
     }
 }
