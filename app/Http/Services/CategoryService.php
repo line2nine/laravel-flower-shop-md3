@@ -6,14 +6,17 @@ namespace App\Http\Services;
 
 use App\Category;
 use App\Http\Repositories\CategoryRepository;
+use App\Http\Repositories\ProductRepository;
 
 class CategoryService
 {
     protected $categoryRepo;
+    protected $productRepo;
 
-    public function __construct(CategoryRepository $categoryRepo)
+    public function __construct(CategoryRepository $categoryRepo, ProductRepository $productRepo)
     {
         $this->categoryRepo = $categoryRepo;
+        $this->productRepo = $productRepo;
     }
 
     public function getAll()
@@ -39,10 +42,9 @@ class CategoryService
         $categoryRepo->name = $request->name;
         $this->categoryRepo->save($categoryRepo);
     }
-
-
-
-
-
+    public function detail($id)
+    {
+        return $this->productRepo->filter($id);
+    }
 
 }

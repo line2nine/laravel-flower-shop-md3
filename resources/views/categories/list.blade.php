@@ -46,7 +46,7 @@
                                     <td>{{$category->created_at}}</td>
                                     <td>
                                         <a class="btn btn-success" href="{{route('category.edit',['id'=>$category->id])}}">Edit</a>
-                                        <a class="btn btn-success" href="#">Detail</a>
+                                        <a class="btn btn-success" href="{{route('category.detail',['id'=>$category->id])}}">Detail</a>
                                         <a class="btn btn-danger" href="{{route('category.delete',['id'=>$category->id])}}"
                                            onclick="return confirm('Are you sure to delete?')">Delete</a>
                                     </td>

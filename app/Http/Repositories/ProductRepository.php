@@ -30,6 +30,11 @@ class ProductRepository
         $product->save();
     }
 
+    public function filter($idCategory)
+    {
+        return $this->product->where('category_id','=',$idCategory)->get();
+    }
+
     public function searchProduct($keyword)
     {
         return $this->product->where('name', 'LIKE', '%' . $keyword . '%')->get();
