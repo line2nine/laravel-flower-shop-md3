@@ -55,7 +55,8 @@ class AppServiceProvider extends ServiceProvider
         });
         view()->composer('*', function($view){
             $view->with([
-                'product' => new Product()
+                'product' => Product::all(),
+
             ]);
 
         });
