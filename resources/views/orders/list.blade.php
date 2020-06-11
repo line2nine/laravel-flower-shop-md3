@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header"><i class="fa fa-table"></i> Users List</div>
+                <div class="card-header"><i class="fa fa-table"></i> Orders List</div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="default-datatable" class="table table-bordered">
@@ -41,28 +41,30 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $key => $user)
+                            @foreach($orders as $key => $order)
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
-                                    <td><img src="{{asset('storage/' . $user->image)}}" class="avatar"></td>
+                                    <td><img src="" class="avatar"></td>
                                     <td>
-                                        <a href="{{route('user.detail', $user->id)}}">{{$user->name}}</a>
+                                        <a href="#"></a>
                                     </td>
-                                    <td>{{$user->email}}</td>
+                                    <td>{{$order->orderDetail->quantity}}</td>
+                                    <td>{{$order->orderDetail->price}}</td>
                                     <td>
                                         <a class="btn btn-white btn-round px-2"
-                                           href="{{route('user.edit', $user->id)}}"><i class="icon-settings"></i>
+                                           href="#"><i class="icon-settings"></i>
                                             Edit
                                         </a>
                                         <a class="btn btn-danger btn-round px-2"
                                            onclick="return confirm('Are You Sure?')"
-                                           href="{{route('user.delete', $user->id)}}"><i class="icon-trash"></i>
+                                           href="#"><i class="icon-trash"></i>
                                             Delete
                                         </a>
                                     </td>

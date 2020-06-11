@@ -47,7 +47,7 @@
                     </ul>
                     <div class="tab-content p-3">
                         <div class="tab-pane active" id="profile">
-                            <h5 class="mb-3">User Profile</h5>
+                            <h5 class="mb-3" style="text-align: center">User Profile</h5>
                             <div class="row">
                                 <div class="col-md-6">
                                     <h6>Name</h6>
