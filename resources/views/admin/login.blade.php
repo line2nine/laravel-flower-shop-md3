@@ -25,7 +25,7 @@
                 <p style="color: red"><sub>*{{$errors->first('password')}}</sub></p>
             @endif
             <button type="submit">GO</button>
-            <p style="color: blue"><a href="#">Forgot Password?</a></p>
+            <p style="color: blue"><a href="{{route('mail.show')}}">Forgot Password?</a></p>
             <h2>&nbsp;</h2>
         </div>
     </div>
