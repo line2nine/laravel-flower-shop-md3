@@ -245,7 +245,7 @@
                                                 </div>
 {{--                                                <div class="product-label discount">--}}
 {{--                                                    <span>10%</span>--}}
-{{--                                                </div>--}}
+{{--                                                </div>-ffgit -}}
                                             </div>
                                             <div class="button-group">
                                                 <a href="{{route('wishlist.add', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
