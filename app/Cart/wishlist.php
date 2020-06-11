@@ -2,7 +2,7 @@
 
 
 namespace App\Cart;
-
+use Illuminate\Support\Facades\Auth;
 
 class wishlist
 {
@@ -10,24 +10,35 @@ class wishlist
     public $items = [];
     public function __construct()
     {
-        $this->items = session('wishlist')? session('wishlist'): [];
+        $this->items = session('wi')? session('wi'): [];
 
     }
 
     public function add($products){
-        $items = [
-            'id' => $products->id,
-            'name' => $products->name,
-            'price' => $products->price,
-            'image' => $products->image,
-        ];
-        session(['wishlist'=>$this->items]);
+        if (Auth::check()){
+            $item = [
+                'id' => $products->id,
+                'name' => $products->name,
+                'price' => $products->price,
+                'image' => $products->image,
+            ];
+            $this->items[$products->id] = $item;
+            session(['wi'=>$this->items]);
+            $a = ['wi'=>$this->items];
+        } else {
+            $message = "ban chua dang nhap";
+            session()->flash('chuanhap-error',$message);
+            return view('index');
+        }
+
+
     }
 
     public function remove($id){
+
         if(isset($this->items[$id])){
             unset($this->items[$id]);
         }
-        session(['wishlist'=>$this->items]);
+        session(['wi'=>$this->items]);
     }
 }

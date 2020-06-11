@@ -11,14 +11,19 @@ class WishlistController extends Controller
 {
    public function add(wishlist $wishlist, $id){
 
-        $product = Product::find($id);
+        $products = Product::find($id);
 
-        $wishlist->add($product);
+        $wishlist->add($products);
 
         return redirect()->back();
    }
     public function remove(wishlist $wishlist, $id){
         $wishlist->remove($id);
         return redirect()->back();
+    }
+    public function view(){
+
+        return view('store.wishlist');
+
     }
 }
