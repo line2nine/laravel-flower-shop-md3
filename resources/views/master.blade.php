@@ -222,7 +222,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="wishlist.html">
+                                        <a href="{{route('wishlist')}}">
                                             <i class="lnr lnr-heart"></i>
                                             <div class="notification">0</div>
                                         </a>
