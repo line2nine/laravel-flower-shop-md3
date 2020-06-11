@@ -81,5 +81,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('{id}/delete', 'ProductController@destroy')->name('product.delete');
             Route::get('{id}/detail', 'ProductController@detail')->name('product.detail');
         });
+        Route::group(['prefix' => 'order'], function () {
+            Route::get('list', 'OrderController@getAll')->name('order.list');
+        });
     });
 });

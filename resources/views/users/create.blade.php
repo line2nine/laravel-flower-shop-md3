@@ -104,8 +104,8 @@
                                 <label class="input-group-text" for="inputGroupSelect01">Status</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect01" name="status">
-                                <option value="{{\App\Http\Controllers\Status::ACTIVE}}">Active</option>
-                                <option value="{{\App\Http\Controllers\Status::BANNED}}">De-active</option>
+                                <option value="{{\App\Http\Controllers\UserStatus::ACTIVE}}">Active</option>
+                                <option value="{{\App\Http\Controllers\UserStatus::BANNED}}">De-active</option>
                             </select>
                         </div>
                         <div class="form-group">
