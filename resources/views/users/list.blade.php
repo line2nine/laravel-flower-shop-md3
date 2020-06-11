@@ -4,8 +4,8 @@
         <div class="col-sm-9">
             <h4 class="page-title">Users List</h4>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javaScript:void();">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="javaScript:void();">Users</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('user.list')}}">List</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Users List</li>
             </ol>
         </div>
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header"><i class="fa fa-table"></i> Data Table Example</div>
+                <div class="card-header"><i class="fa fa-table"></i> Users List</div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="default-datatable" class="table table-bordered">
@@ -51,19 +51,18 @@
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
                                     <td><img src="{{asset('storage/' . $user->image)}}" class="avatar"></td>
-                                    <td>{{$user->name}}</td>
+                                    <td>
+                                        <a href="{{route('user.detail', $user->id)}}">{{$user->name}}</a>
+                                    </td>
                                     <td>{{$user->email}}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-round px-2"
-                                           href="{{route('user.detail', $user->id)}}"><i
-                                                class="icon-size-fullscreen"></i>
-                                            Profile
-                                        </a>
-                                        <a class="btn btn-warning btn-round px-2"
+                                        <a class="btn btn-white btn-round px-2"
                                            href="{{route('user.edit', $user->id)}}"><i class="icon-settings"></i>
                                             Edit
                                         </a>
-                                        <a class="btn btn-danger btn-round px-2" href="#"><i class="icon-trash"></i>
+                                        <a class="btn btn-danger btn-round px-2"
+                                           onclick="return confirm('Are You Sure?')"
+                                           href="{{route('user.delete', $user->id)}}"><i class="icon-trash"></i>
                                             Delete
                                         </a>
                                     </td>
