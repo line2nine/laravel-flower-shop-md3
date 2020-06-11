@@ -62,6 +62,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('list', 'UserController@getAll')->name('user.list');
         Route::get('create-new', 'UserController@create')->name('user.create');
         Route::post('create-new', 'UserController@store');
+        Route::get('{id}/edit', 'UserController@edit')->name('user.edit');
+        Route::post('{id}/edit', 'UserController@update');
         Route::get('{id}/change-password', 'UserController@changePass')->name('user.changePass');
         Route::post('{id}/change-password', 'UserController@updatePass');
         Route::get('{id}/detail', 'UserController@userDetail')->name('user.detail');

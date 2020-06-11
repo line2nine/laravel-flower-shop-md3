@@ -28,7 +28,7 @@
                     @endif
                 </div>
             </div>
-            <a class="btn btn-primary btn-round px-3" href="#"><i class="icon-settings"></i>
+            <a class="btn btn-primary btn-round px-3" href="{{route('user.edit', $user->id)}}"><i class="icon-settings"></i>
                 Edit
             </a>
             <a class="btn btn-light btn-round px-3" href="{{route('user.list')}}"><i class="icon-logout"></i>
