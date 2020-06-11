@@ -9,12 +9,18 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function send($email)
+    public function index()
     {
+        return view('email.forgotPassword');
+    }
+    public function send(Request $request)
+    {
+        $email = $request->email;
         $detail = [
             'title'=>'Change password Admin',
-            'body'=>"click to link: $"
+            'body'=>"click to link:"
         ];
         Mail::to($email)->send(new SendMail($detail));
     }
+
 }

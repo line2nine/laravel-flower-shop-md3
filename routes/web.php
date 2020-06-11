@@ -51,7 +51,8 @@ Route::group(['prefix' => 'checkout'], function (){
 
 
 
-
+Route::get('send-mail','Mail\MailController@index')->name('mail.show');
+Route::post('send-mail','Mail\MailController@send')->name('mail.send');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
