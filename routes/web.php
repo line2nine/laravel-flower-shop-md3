@@ -22,7 +22,7 @@ Route::get('account', 'store\AuthController@account')->name('account');
 Route::get('forgot', 'store\AuthController@forgot')->name('forgot');
 Route::post('forgot', 'store\AuthController@update')->name('update');
 Route::get('logout', 'store\AuthController@logout')->name('logout');
-Route::get('wishlist', 'store\WishlistController@wishlist')->name('wishlist');
+//Route::get('wishlist', 'store\WishlistController@wishlist')->name('wishlist');
 
 Route::group(['prefix' => 'wishlist'], function (){
     Route::get('/', 'store\WishlistController@view')->name('wishlist');
