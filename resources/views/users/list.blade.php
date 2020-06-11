@@ -52,7 +52,7 @@
                                         <a class="btn btn-primary btn-round px-2" href="{{route('user.detail', $user->id)}}"><i class="icon-size-fullscreen"></i>
                                             Profile
                                         </a>
-                                        <a class="btn btn-warning btn-round px-2" href="#"><i class="icon-settings"></i>
+                                        <a class="btn btn-warning btn-round px-2" href="{{route('user.edit', $user->id)}}"><i class="icon-settings"></i>
                                             Edit
                                         </a>
                                         <a class="btn btn-danger btn-round px-2" href="#"><i class="icon-trash"></i>
