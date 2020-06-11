@@ -53,4 +53,10 @@ class CategoryController extends Controller
         \Illuminate\Support\Facades\Session::flash('success','Delete Completed');
         return redirect()->route('category.index');
     }
+
+    public function detail($id){
+        $products = $this->categoryService->detail($id);
+        $category = $this->categoryService->find($id);
+        return view('categories.detail',compact('products','category'));
+    }
 }
