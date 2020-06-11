@@ -22,6 +22,14 @@ class ProductService
     {
         return $this->productRepo->getAll();
     }
+    public function getAllNew()
+    {
+        return $this->productRepo->getAll();
+    }
+    public function getAllShop()
+    {
+        return $this->productRepo->getAllShop();
+    }
 
     public function find($id)
     {

@@ -6,7 +6,7 @@
     {{session('chuanhap-error')}}
     <p class="text-danger">{{session('logout')}}</p>
     <p class="text-danger">{{session('order-success')}}</p>
-{{--    {{dd($wishlist)}}--}}
+
     <main>
         <!-- slider area start -->
         <section class="slider-area">
@@ -406,7 +406,7 @@
             </div>
         </section>
         <!-- banner statistics end -->
-
+{{--        -----------------------------------------------------------------------------Xu hướng sản phẩm------------------------------}}
         <!-- trending product area start -->
         <section class="top-sellers section-space">
             <div class="container">

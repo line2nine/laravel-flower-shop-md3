@@ -43,6 +43,12 @@ Route::group(['prefix' => 'checkout'], function () {
     Route::post('/', 'store\CheckoutController@submit_form');
 });
 
+Route::group(['prefix' => 'product'], function (){
+ Route::get('/', 'store\ProductController@shop')->name('product.shop');
+ Route::get('details/{id}', 'store\ProductController@details')->name('product.details');
+});
+
+
 Route::get('send-mail', 'Mail\MailController@index')->name('mail.show');
 Route::post('send-mail', 'Mail\MailController@send')->name('mail.send');
 
