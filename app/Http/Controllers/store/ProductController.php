@@ -28,4 +28,5 @@ class ProductController extends Controller
 
         return view('store.product-details', compact('productDetails'));
     }
+
 }

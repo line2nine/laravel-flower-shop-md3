@@ -22,15 +22,11 @@ Route::get('account', 'store\AuthController@account')->name('account');
 Route::get('forgot', 'store\AuthController@forgot')->name('forgot');
 Route::post('forgot', 'store\AuthController@update')->name('update');
 Route::get('logout', 'store\AuthController@logout')->name('logout');
-//Route::get('wishlist', 'store\WishlistController@wishlist')->name('wishlist');
-
 Route::group(['prefix' => 'wishlist'], function () {
     Route::get('/', 'store\WishlistController@view')->name('wishlist');
     Route::get('wishlist/{id}', 'store\WishlistController@add')->name('wishlist.add');
     Route::get('remove/{id}', 'store\WishlistController@remove')->name('wishlist.remove');
-
 });
-
 Route::group(['prefix' => 'cart'], function () {
     Route::get('add/{id}', 'store\CartController@add')->name('cart.add');
     Route::get('view', 'store\CartController@view')->name('cart.view');
@@ -49,6 +45,13 @@ Route::post('forgot-password', 'Mail\MailController@send')->name('mail.send');
 Route::group(['prefix' => 'product'], function (){
  Route::get('/', 'store\ProductController@shop')->name('product.shop');
  Route::get('details/{id}', 'store\ProductController@details')->name('product.details');
+});
+
+
+
+
+
+
 });
 
 Route::group(['prefix' => 'admin'], function () {

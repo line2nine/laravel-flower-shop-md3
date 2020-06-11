@@ -229,7 +229,7 @@
 
                             <!-- product item list wrapper start -->
                             <div class="shop-product-wrap grid-view row mbn-40">
-                                <!-- product single item hhhstart -->
+                                <!-- product single item start -->
                                @foreach($products as $product)
                                 <div class="col-md-4 col-sm-6">
                                     <!-- product grid start -->
@@ -243,9 +243,9 @@
                                                 <div class="product-label new">
                                                     <span>new</span>
                                                 </div>
-                                                <div class="product-label discount">
-                                                    <span>10%</span>
-                                                </div>
+{{--                                                <div class="product-label discount">--}}
+{{--                                                    <span>10%</span>--}}
+{{--                                                </div>-ffgit -}}
                                             </div>
                                             <div class="button-group">
                                                 <a href="{{route('wishlist.add', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
@@ -268,7 +268,7 @@
                                     <!-- product list item end -->
                                     <div class="product-list-item">
                                         <figure class="product-thumb">
-                                            <a href="product-details.html">
+                                            <a href="{{route('product.details', $product->id)}}">
                                                 <img class="pri-img" src="assets/img/product/product-1.jpg" alt="product">
                                                 <img class="sec-img" src="assets/img/product/product-3.jpg" alt="product">
                                             </a>
@@ -276,25 +276,23 @@
                                                 <div class="product-label new">
                                                     <span>new</span>
                                                 </div>
-                                                <div class="product-label discount">
-                                                    <span>10%</span>
-                                                </div>
+{{--                                                <div class="product-label discount">--}}
+{{--                                                    <span>10%</span>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </figure>
                                         <div class="product-content-list">
-                                            <h5 class="product-name"><a href="product-details.html">Flowers daisy pink stick</a></h5>
+                                            <h5 class="product-name"><a href="product-details.html">{{$product->name}}</a></h5>
                                             <div class="price-box">
-                                                <span class="price-regular">$50.00</span>
-                                                <span class="price-old"><del>$60.00</del></span>
+                                                <span class="price-regular">{{number_format($product->price)}} VND</span>
+{{--                                                <span class="price-old"><del>$60.00</del></span>--}}
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis
-                                                quod numquam, sit fugiat, deserunt ipsa mollitia sunt quam corporis ullam
-                                                rem, accusantium adipisci officia eaque.
+                                            <p>{{($product->description)}} VND
                                             </p>
                                             <div class="button-group-list">
-                                                <a class="btn-big" href="cart.html" data-toggle="tooltip" title="Add to Cart"><i class="lnr lnr-cart"></i>Add to Cart</a>
+                                                <a class="btn-big" href="{{route('cart.add', $product->id)}}" data-toggle="tooltip" title="Add to Cart"><i class="lnr lnr-cart"></i>Add to Cart</a>
                                                 <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"  title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                                <a href="wishlist.html" data-toggle="tooltip" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
+                                                <a href="{{route('wishlist.add', $product->id)}}" data-toggle="tooltip" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
                                             </div>
                                         </div>
                                     </div>
