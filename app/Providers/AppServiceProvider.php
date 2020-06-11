@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Cart\Cart;
 use App\Cart\wishlist;
 use App\Order;
+use App\Product;
 use App\OrderDetail;
 use Illuminate\Support\ServiceProvider;
 
@@ -49,6 +50,12 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view){
             $view->with([
                 'wishlist' => new wishlist()
+            ]);
+
+        });
+        view()->composer('*', function($view){
+            $view->with([
+                'product' => new Product()
             ]);
 
         });
