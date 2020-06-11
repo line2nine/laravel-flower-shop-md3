@@ -43,14 +43,13 @@ Route::group(['prefix' => 'checkout'], function () {
     Route::post('/', 'store\CheckoutController@submit_form');
 });
 
+Route::get('forgot-password', 'Mail\MailController@index')->name('mail.show');
+Route::post('forgot-password', 'Mail\MailController@send')->name('mail.send');
+
 Route::group(['prefix' => 'product'], function (){
  Route::get('/', 'store\ProductController@shop')->name('product.shop');
  Route::get('details/{id}', 'store\ProductController@details')->name('product.details');
 });
-
-
-Route::get('send-mail', 'Mail\MailController@index')->name('mail.show');
-Route::post('send-mail', 'Mail\MailController@send')->name('mail.send');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
