@@ -37,6 +37,7 @@ class ProductController extends Controller
         $this->productService->create($request);
         Session::flash('success','Add Completed');
         return redirect()->route('product.create');
+
     }
 
     public function edit($id)
