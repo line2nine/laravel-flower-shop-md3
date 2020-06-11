@@ -6,7 +6,7 @@ use App\Http\Requests\CreateCategoryRequest;
 use App\Http\Requests\EditCategoryRequest;
 use App\Http\Services\CategoryService;
 use Illuminate\Http\Request;
-use MongoDB\Driver\Session;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -31,7 +31,7 @@ class CategoryController extends Controller
     {
         $category = $this->categoryService->find($id);
         $this->categoryService->update($request, $category);
-        \Illuminate\Support\Facades\Session::flash('success','Edit Completed');
+        Session::flash('success','Edit Completed');
         return redirect('admin/category');
     }
 
@@ -43,14 +43,14 @@ class CategoryController extends Controller
     public function store(CreateCategoryRequest $request)
     {
         $this->categoryService->create($request);
-        \Illuminate\Support\Facades\Session::flash('success','Add Completed');
+        Session::flash('success','Add Completed');
         return redirect()->route('category.create');
     }
 
     public function destroy($id){
         $category = $this->categoryService->find($id);
         $category->delete();
-        \Illuminate\Support\Facades\Session::flash('success','Delete Completed');
+        Session::flash('success','Delete Completed');
         return redirect()->route('category.index');
     }
 
