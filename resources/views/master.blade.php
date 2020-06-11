@@ -696,60 +696,47 @@
             <div class="minicart-content-box">
                 <div class="minicart-item-wrapper">
                     <ul>
+                        @if(count($cart->items) == 0)
+                            <p colspan="10" class="text-danger">Không có sản phẩm</p>
+                        @else
+                            <?php $s = 1 ?>
+                            @foreach($cart->items as $key => $cartOne)
                         <li class="minicart-item">
                             <div class="minicart-thumb">
                                 <a href="product-details.html">
-                                    <img src="assets/img/cart/cart-1.jpg" alt="product">
+                                    <img src="{{asset('storage/' . $cartOne['image'])}} alt="product">
                                 </a>
                             </div>
                             <div class="minicart-content">
                                 <h3 class="product-name">
-                                    <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
+                                    <a href="product-details.html">{{$cartOne['name']}}</a>
                                 </h3>
                                 <p>
-                                    <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                    <span class="cart-price">$100.00</span>
+                                    <span class="cart-quantity">{{$cartOne['quantity']}}<strong>&times;</strong></span>
+                                    <span class="cart-price">{{number_format($cartOne['price'])}} VND</span>
                                 </p>
                             </div>
                             <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
                         </li>
-                        <li class="minicart-item">
-                            <div class="minicart-thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/cart/cart-2.jpg" alt="product">
-                                </a>
-                            </div>
-                            <div class="minicart-content">
-                                <h3 class="product-name">
-                                    <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
-                                </h3>
-                                <p>
-                                    <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                    <span class="cart-price">$80.00</span>
-                                </p>
-                            </div>
-                            <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
-                        </li>
+                                @endforeach
+                        @endif
                     </ul>
                 </div>
 
                 <div class="minicart-pricing-box">
                     <ul>
-                        <li>
-                            <span>sub-total</span>
-                            <span><strong>$300.00</strong></span>
-                        </li>
-                        <li>
-                            <span>Eco Tax (-2.00)</span>
-                            <span><strong>$10.00</strong></span>
-                        </li>
-                        <li>
-                            <span>VAT (20%)</span>
-                            <span><strong>$60.00</strong></span>
-                        </li>
+{{--                        <li>--}}
+{{--                            <span>sub-total</span>--}}
+{{--                            <span><strong>$300.00</strong></span>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <span>Eco Tax (-2.00)</span>--}}
+{{--                            <span><strong>$10.00</strong></span>--}}
+{{--                        </li>--}}
+
                         <li class="total">
-                            <span>total</span>
-                            <span><strong>$370.00</strong></span>
+                            <span>Tổng tiền</span>
+                            <span><strong>{{number_format($cart->total_price)}} VND</strong></span>
                         </li>
                     </ul>
                 </div>
