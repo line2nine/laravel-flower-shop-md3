@@ -44,10 +44,10 @@
                                     <td>{{$product->price}}</td>
                                     <td>{{$product->category->name}}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{route('product.edit',['id'=>$product->id])}}">Edit</a>
-                                        <a class="btn btn-success" href="{{ route('product.detail',['id'=>$product->id]) }}">Detail</a>
+                                        <a class="btn btn-primary" href="{{ route('product.detail',['id'=>$product->id]) }}"><i class="icon-size-fullscreen"></i>Detail</a>
+                                        <a class="btn btn-warning" href="{{route('product.edit',['id'=>$product->id])}}"><i class="icon-settings"></i>Edit</a>
                                         <a class="btn btn-danger" href="{{route('product.delete',['id'=>$product->id])}}"
-                                           onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                           onclick="return confirm('Are you sure to delete?')"><i class="icon-trash"></i>Delete</a>
                                     </td>
                                 </tr>
                             @empty
