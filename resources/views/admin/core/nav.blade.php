@@ -1,7 +1,7 @@
 <!--Start sidebar-wrapper-->
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
     <div class="brand-logo">
-        <a href="#">
+        <a href="{{route('admin.dashboard')}}">
             <h5 class="logo-text">Dashboard</h5>
         </a>
     </div>
@@ -17,7 +17,7 @@
         <div id="user-dropdown" class="collapse">
             <ul class="user-setting-menu">
                 @if(\Illuminate\Support\Facades\Auth::check())
-                <li><a href="#"><i class="icon-user"></i>My Profile</a></li>
+                <li><a href="{{route('user.detail', auth()->user()->id)}}"><i class="icon-user"></i>My Profile</a></li>
                 <li><a href="{{route('user.changePass', auth()->user()->id)}}"><i
                             class="icon-settings"></i>Change Password</a></li>
                 <li><a href="{{route('admin.logout')}}"><i class="icon-power"></i>Logout</a></li>
@@ -76,47 +76,6 @@
                 <li><a href="{{route('product.create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create</a></li>
             </ul>
         </li>
-
-        <!-- -------------------------------- -->
-
-        <li>
-            <a href="javaScript:void();" class="waves-effect">
-                <i class="zmdi zmdi-lock"></i> <span>Authentication</span>
-                <i class="fa fa-angle-left float-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="authentication-signin.html"><i class="zmdi zmdi-long-arrow-right"></i> SignIn 1</a>
-                </li>
-                <li><a href="authentication-signup.html"><i class="zmdi zmdi-long-arrow-right"></i> SignUp 1</a>
-                </li>
-                <li><a href="authentication-signin2.html"><i class="zmdi zmdi-long-arrow-right"></i> SignIn 2</a>
-                </li>
-                <li><a href="authentication-signup2.html"><i class="zmdi zmdi-long-arrow-right"></i> SignUp 2</a>
-                </li>
-                <li><a href="authentication-lock-screen.html"><i class="zmdi zmdi-long-arrow-right"></i> Lock Screen</a>
-                </li>
-                <li><a href="authentication-reset-password.html"><i class="zmdi zmdi-long-arrow-right"></i> Reset
-                        Password 1</a></li>
-                <li><a href="authentication-reset-password2.html"><i class="zmdi zmdi-long-arrow-right"></i> Reset
-                        Password 2</a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="calendar.html" class="waves-effect">
-                <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
-                <small class="badge float-right badge-light">New</small>
-            </a>
-        </li>
-        <!-- -------------------------------- -->
-        <li class="sidebar-header">LABELS</li>
-        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a>
-        </li>
-        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-chart-donut text-success"></i>
-                <span>Warning</span></a></li>
-        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a>
-        </li>
     </ul>
-
 </div>
 <!--End sidebar-wrapper-->

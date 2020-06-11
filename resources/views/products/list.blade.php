@@ -41,12 +41,12 @@
                                     <th scope="row">{{++$key}}</th>
                                     <td><img src="{{asset('storage/'.$product->image)}}" class="avatar" alt="avatar"></td>
                                     <td>{{$product->name}}</td>
-                                    <td>{{$product->price}}</td>
+                                    <td>${{number_format($product->price)}}</td>
                                     <td>{{$product->category->name}}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="{{ route('product.detail',['id'=>$product->id]) }}"><i class="icon-size-fullscreen"></i>Detail</a>
-                                        <a class="btn btn-warning" href="{{route('product.edit',['id'=>$product->id])}}"><i class="icon-settings"></i>Edit</a>
-                                        <a class="btn btn-danger" href="{{route('product.delete',['id'=>$product->id])}}"
+                                        <a class="btn btn-primary btn-round px-3" href="{{ route('product.detail',['id'=>$product->id]) }}"><i class="icon-size-fullscreen"></i>Detail</a>
+                                        <a class="btn btn-warning btn-round px-3" href="{{route('product.edit',['id'=>$product->id])}}"><i class="icon-settings"></i>Edit</a>
+                                        <a class="btn btn-danger btn-round px-3" href="{{route('product.delete',['id'=>$product->id])}}"
                                            onclick="return confirm('Are you sure to delete?')"><i class="icon-trash"></i>Delete</a>
                                     </td>
                                 </tr>

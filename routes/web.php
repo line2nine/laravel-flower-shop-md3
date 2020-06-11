@@ -42,16 +42,6 @@ Route::group(['prefix' => 'checkout'], function (){
     Route::get('/','store\CheckoutController@form')->name('checkout');
     Route::post('/','store\CheckoutController@submit_form');
 });
-//Route::group(['prefix' => 'product'], function (){
-// ggg   Route::get('details', 'store.ProductController@details')->name('details');
-//});
-
-
-
-
-
-
-
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
