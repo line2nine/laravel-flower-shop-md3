@@ -157,6 +157,7 @@
                                                     <a href="{{route('register')}}">Đăng ký</a>
                                                 @else
                                                     <a href="{{route('account')}}">{{\Illuminate\Support\Facades\Auth::user()->email}}</a>
+                                                    <a href="{{route('logout')}}">Đăng xuất</a>
                                                 @endif
 
                                             </li>
