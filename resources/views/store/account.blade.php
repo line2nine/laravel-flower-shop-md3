@@ -67,7 +67,6 @@
                                                                     <th>Trạng thái</th>
                                                                     <th>Tổng tiền</th>
                                                                     <th></th>
-                                                                    {{dd($orderDetail->price)}}
                                                                 </tr>
                                                             </thead>
                                                             <tbody>

@@ -17,8 +17,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $products = $this->homeService->getAll();
-        return view('index', compact('products'));
+        return view('index');
     }
 
 

@@ -1,14 +1,13 @@
 @extends('admin.master')
 @section('content')
-
     <!-- Breadcrumb-->
     <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-            <h4 class="page-title">Products</h4>
+            <h4 class="page-title">Products List</h4>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javaScript:void();">Dashtreme</a></li>
-                <li class="breadcrumb-item"><a href="javaScript:void();">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Simple Tables</li>
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('product.index')}}">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page">List</li>
             </ol>
         </div>
     </div>
@@ -16,15 +15,15 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                <div class="card-header"><i class="fa fa-table"></i> Products List</div>
+                @if(\Illuminate\Support\Facades\Session::has('success'))
+                    <p class="text-success">
+                        <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
+                    </p>
+                @endif
                 <div class="card-body">
-                    <h5 class="card-title">Category Table</h5>
-                    @if(\Illuminate\Support\Facades\Session::has('success'))
-                        <p class="text-success">
-                            <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
-                        </p>
-                    @endif
                     <div class="table-responsive">
-                        <table class="table">
+                        <table id="default-datatable" class="table table-bordered">
                             <thead>
                             <tr>
                                 <th scope="col">STT</th>
@@ -39,15 +38,21 @@
                             @forelse($products as $key=>$product)
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
-                                    <td><img src="{{asset('storage/'.$product->image)}}" class="avatar" alt="avatar"></td>
-                                    <td>{{$product->name}}</td>
-                                    <td>{{$product->price}}</td>
+                                    <td><img src="{{asset('storage/'.$product->image)}}" class="avatar" alt="avatar">
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('product.detail',['id'=>$product->id]) }}">{{$product->name}}</a>
+                                    </td>
+                                    <td>${{number_format($product->price)}}</td>
                                     <td>{{$product->category->name}}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{route('product.edit',['id'=>$product->id])}}">Edit</a>
-                                        <a class="btn btn-success" href="{{ route('product.detail',['id'=>$product->id]) }}">Detail</a>
-                                        <a class="btn btn-danger" href="{{route('product.delete',['id'=>$product->id])}}"
-                                           onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                        <a class="btn btn-white btn-round px-3"
+                                           href="{{route('product.edit',['id'=>$product->id])}}"><i
+                                                class="icon-settings"></i>Edit</a>
+                                        <a class="btn btn-danger btn-round px-3"
+                                           href="{{route('product.delete',['id'=>$product->id])}}"
+                                           onclick="return confirm('Are you sure to delete?')"><i
+                                                class="icon-trash"></i>Delete</a>
                                     </td>
                                 </tr>
                             @empty
@@ -57,11 +62,9 @@
                             @endforelse
                             </tbody>
                         </table>
-                        {{--                                {!! $products->links() !!}--}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

@@ -28,7 +28,7 @@
                     @endif
                 </div>
             </div>
-            <a class="btn btn-primary btn-round px-3" href="#"><i class="icon-settings"></i>
+            <a class="btn btn-primary btn-round px-3" href="{{route('user.edit', $user->id)}}"><i class="icon-settings"></i>
                 Edit
             </a>
             <a class="btn btn-light btn-round px-3" href="{{route('user.list')}}"><i class="icon-logout"></i>
@@ -47,7 +47,7 @@
                     </ul>
                     <div class="tab-content p-3">
                         <div class="tab-pane active" id="profile">
-                            <h5 class="mb-3">User Profile</h5>
+                            <h5 class="mb-3" style="text-align: center">User Profile</h5>
                             <div class="row">
                                 <div class="col-md-6">
                                     <h6>Name</h6>

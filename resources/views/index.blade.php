@@ -6,6 +6,7 @@
     {{session('chuanhap-error')}}
     <p class="text-danger">{{session('logout')}}</p>
     <p class="text-danger">{{session('order-success')}}</p>
+
     <main>
         <!-- slider area start -->
         <section class="slider-area">
@@ -301,12 +302,12 @@
                 </div>
                 <div class="row mtn-40">
                     <!-- product single item start -->
-                    @foreach($products as $key => $product)
+                    @foreach($product as $key => $value)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="product-item mt-40">
                             <figure class="product-thumb">
-                                <a href=""  data-toggle="modal" data-target="#quick_view" >
-                                    <img class="pri-img" src="assets/img/product/product-1.jpg" alt="product">
+                                <a href=""  data-toggle="modal" data-target="#quick_view{{$value->id}}" >
+                                    <img class="pri-img" src="{{asset('assets/img/product/product-1.jpg')}}" alt="product">
                                     <img class="sec-img" src="assets/img/product/product-2.jpg" alt="product">
                                 </a>
                                 <div class="product-badge">
@@ -318,22 +319,24 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="{{route('wishlist.add',['id'=>$product->id])}}" data-toggle="tooltip" data-placement="left" title="Yêu thích"><i class="lnr lnr-heart"></i></a>
-                                    <a href="" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Xem chi tiết"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="{{route('cart.add',['id'=>$product->id])}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giỏ hàng"><i class="lnr lnr-cart"></i></a>
+                                    <a href="{{route('wishlist.add',['id'=>$value->id])}}" data-toggle="tooltip" data-placement="left" title="Yêu thích"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view{{$value->id}}"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="{{route('cart.add',['id'=>$value->id])}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giỏ hàng"><i class="lnr lnr-cart"></i></a>
+
                                 </div>
                             </figure>
                             <div class="product-caption">
                                 <p class="product-name">
-                                    <a href="">{{$product->name}}</a>
+                                    <a href="">{{$value->name}}</a>
                                 </p>
                                 <div class="price-box">
-                                    <span class="price-regular">$60.00</span>
-                                    <span class="price-old"><del>$70.00</del></span>
+                                    <span class="price-regular">{{number_format($value->price)}} .VND</span>
+{{--                                    <span class="price-old"><del>$70.00</del></span>--}}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @include('store.modal')
                 @endforeach
                     <!-- product single item end -->
 
@@ -405,7 +408,7 @@
             </div>
         </section>
         <!-- banner statistics end -->
-
+{{--        -----------------------------------------------------------------------------Xu hướng sản phẩm------------------------------}}
         <!-- trending product area start -->
         <section class="top-sellers section-space">
             <div class="container">

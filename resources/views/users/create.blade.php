@@ -99,6 +99,15 @@
                                 <option value="{{\App\Http\Controllers\Role::CUSTOMER}}">Customer</option>
                             </select>
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Status</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="status">
+                                <option value="{{\App\Http\Controllers\UserStatus::ACTIVE}}">Active</option>
+                                <option value="{{\App\Http\Controllers\UserStatus::BANNED}}">De-active</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-round px-5"><i class="icon-lock"></i>
                                 Register

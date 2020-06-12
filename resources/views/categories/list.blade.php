@@ -6,9 +6,9 @@
         <div class="col-sm-9">
             <h4 class="page-title">Categories</h4>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javaScript:void();">Dashtreme</a></li>
-                <li class="breadcrumb-item"><a href="javaScript:void();">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Simple Tables</li>
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('category.index')}}">Categories</a></li>
+                <li class="breadcrumb-item active" aria-current="page">List</li>
             </ol>
         </div>
         <div class="col-sm-3">
@@ -41,13 +41,12 @@
                             @forelse($categories as $key=>$category)
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
-                                    <td>{{$category->name}}</td>
+                                    <td><a href="{{route('category.detail',['id'=>$category->id])}}">{{$category->name}}</a></td>
                                     <td>{{$category->total()}}</td>
                                     <td>{{$category->created_at}}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{route('category.edit',['id'=>$category->id])}}">Edit</a>
-                                        <a class="btn btn-success" href="{{route('category.detail',['id'=>$category->id])}}">Detail</a>
-                                        <a class="btn btn-danger" href="{{route('category.delete',['id'=>$category->id])}}"
+                                        <a class="btn btn-white btn-round px-3" href="{{route('category.edit',['id'=>$category->id])}}">Edit</a>
+                                        <a class="btn btn-danger btn-round px-3" href="{{route('category.delete',['id'=>$category->id])}}"
                                            onclick="return confirm('Are you sure to delete?')">Delete</a>
                                     </td>
                                 </tr>

@@ -83,18 +83,19 @@
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li class="active"><a href="index.html">Home <i
+
+                                        <li class="active"><a href="index.html">Trang chủ <i
                                                         class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown">
-                                                <li><a href="index.html">Home version 01</a></li>
-                                                <li><a href="index-2.html">Home version 02</a></li>
-                                                <li><a href="index-3.html">Home version 03</a></li>
-                                                <li><a href="index-4.html">Home version 04</a></li>
-                                            </ul>
+{{--                                            <ul class="dropdown">--}}
+{{--                                                <li><a href="index.html">Home version 01</a></li>--}}
+{{--                                                <li><a href="index-2.html">Home version 02</a></li>--}}
+{{--                                                <li><a href="index-3.html">Home version 03</a></li>--}}
+{{--                                                <li><a href="index-4.html">Home version 04</a></li>--}}
+{{--                                            </ul>--}}
                                         </li>
-                                        <li class="static"><a href="#">pages <i class="fa fa-angle-down"></i></a>
+                                        <li class="static"><a href="#">Danh mục <i class="fa fa-angle-down"></i></a>
                                             <ul class="megamenu dropdown">
-                                                <li class="mega-title"><a href="#">column 01</a>
+{{--                                                <li class="mega-title"><a href="#">column 01</a>--}}
                                                     <ul>
                                                         <li><a href="shop.html">shop grid left
                                                                 sidebar</a></li>
@@ -106,33 +107,7 @@
                                                                 sidebar</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="mega-title"><a href="#">column 02</a>
-                                                    <ul>
-                                                        <li><a href="product-details.html">product details</a></li>
-                                                        <li><a href="product-details-affiliate.html">product
-                                                                details
-                                                                affiliate</a></li>
-                                                        <li><a href="product-details-variable.html">product details
-                                                                variable</a></li>
-                                                        <li><a href="product-details-group.html">product details
-                                                                group</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">column 03</a>
-                                                    <ul>
-                                                        <li><a href="cart.html">cart</a></li>
-                                                        <li><a href="checkout.html">checkout</a></li>
-                                                        <li><a href="compare.html">compare</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">column 04</a>
-                                                    <ul>
-                                                        <li><a href="my-account.html">my-account</a></li>
-                                                        <li><a href="login-register.html">login-register</a></li>
-                                                        <li><a href="contact-us.html">contact us</a></li>
-                                                    </ul>
-                                                </li>
+
                                                 <li class="megamenu-banners d-none d-lg-block">
                                                     <a href="product-details.html">
                                                         <img src="assets/img/banner/img-bottom-menu.jpg" alt="">
@@ -140,41 +115,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="shop.html">shop <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">shop grid layout <i class="fa fa-angle-right"></i></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="shop.html">shop grid left sidebar</a></li>
-                                                        <li><a href="shop-grid-right-sidebar.html">shop grid right
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-grid-full-3-col.html">shop grid full 3 col</a>
-                                                        </li>
-                                                        <li><a href="shop-grid-full-4-col.html">shop grid full 4 col</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">shop list layout <i class="fa fa-angle-right"></i></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="shop-list-left-sidebar.html">shop list left
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">shop list right
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-list-full-width.html">shop list full width</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">products details <i class="fa fa-angle-right"></i></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="product-details.html">product details</a></li>
-                                                        <li><a href="product-details-affiliate.html">product details
-                                                                affiliate</a></li>
-                                                        <li><a href="product-details-variable.html">product details
-                                                                variable</a></li>
-                                                        <li><a href="product-details-group.html">product details
-                                                                group</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                        <li><a href="{{route('product.shop')}}">Shop<i></i></a>
                                         </li>
                                         <li><a href="blog-left-sidebar.html">Blog <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
@@ -186,7 +127,7 @@
                                                         sidebar</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact-us.html">Contact us</a></li>
+{{--                                        <li><a href="contact-us.html">Contact us</a></li>--}}
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->
@@ -222,7 +163,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="wishlist.html">
+                                        <a href="{{route('wishlist')}}">
                                             <i class="lnr lnr-heart"></i>
                                             <div class="notification">0</div>
                                         </a>
@@ -572,101 +513,7 @@
 <!-- End Footer Area Wrapper -->
 
 <!-- Quick view modal start -->
-<div class="modal" id="quick_view">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <!-- product details inner end -->
-                <div class="product-details-inner">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-5">
-                            <div class="product-large-slider">
-                                <div class="pro-large-img">
-                                    <img src="assets/img/product/product-details-img1.jpg" alt="product-details"/>
-                                </div>
-                                <div class="pro-large-img">
-                                    <img src="assets/img/product/product-details-img2.jpg" alt="product-details"/>
-                                </div>
-                                <div class="pro-large-img">
-                                    <img src="assets/img/product/product-details-img3.jpg" alt="product-details"/>
-                                </div>
-                                <div class="pro-large-img">
-                                    <img src="assets/img/product/product-details-img4.jpg" alt="product-details"/>
-                                </div>
-                            </div>
-                            <div class="pro-nav slick-row-10 slick-arrow-style">
-                                <div class="pro-nav-thumb">
-                                    <img src="assets/img/product/product-details-img1.jpg" alt="product-details"/>
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="assets/img/product/product-details-img2.jpg" alt="product-details"/>
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="assets/img/product/product-details-img3.jpg" alt="product-details"/>
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="assets/img/product/product-details-img4.jpg" alt="product-details"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-7">
-                            <div class="product-details-des quick-details">
-                                <h3 class="product-name">Orchid flower white stick</h3>
-                                <div class="ratings d-flex">
-                                    <span><i class="lnr lnr-star"></i></span>
-                                    <span><i class="lnr lnr-star"></i></span>
-                                    <span><i class="lnr lnr-star"></i></span>
-                                    <span><i class="lnr lnr-star"></i></span>
-                                    <span><i class="lnr lnr-star"></i></span>
-                                    <div class="pro-review">
-                                        <span>1 Reviews</span>
-                                    </div>
-                                </div>
-                                <div class="price-box">
-                                    <span class="price-regular">$70.00</span>
-                                    <span class="price-old"><del>$90.00</del></span>
-                                </div>
-                                <h5 class="offer-text"><strong>Hurry up</strong>! offer ends in:</h5>
-                                <div class="product-countdown" data-countdown="2020/04/25"></div>
-                                <div class="availability">
-                                    <i class="fa fa-check-circle"></i>
-                                    <span>200 in stock</span>
-                                </div>
-                                <p class="pro-desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                    nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                                <div class="quantity-cart-box d-flex align-items-center">
-                                    <h5>qty:</h5>
-                                    <div class="quantity">
-                                        <div class="pro-qty"><input type="text" value="1"></div>
-                                    </div>
-                                    <div class="action_link">
-                                        <a class="btn btn-cart2" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                                <div class="useful-links">
-                                    <a href="#" data-toggle="tooltip" title="Compare"><i
-                                                class="lnr lnr-sync"></i>compare</a>
-                                    <a href="#" data-toggle="tooltip" title="Wishlist"><i
-                                                class="lnr lnr-heart"></i>wishlist</a>
-                                </div>
-                                <div class="like-icon">
-                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i>like</a>
-                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i>tweet</a>
-                                    <a class="pinterest" href="#"><i class="fa fa-pinterest"></i>save</a>
-                                    <a class="google" href="#"><i class="fa fa-google-plus"></i>share</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- product details inner end -->
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Quick view modal end -->
 
 <!-- offcanvas search form start -->
@@ -696,6 +543,11 @@
             <div class="minicart-content-box">
                 <div class="minicart-item-wrapper">
                     <ul>
+                        @if(count($cart->items) == 0)
+                            <a colspan="10" class="text-danger">Không có dữ liệu</a>
+                        @else
+                            <?php $s = 1 ?>
+                            @foreach($cart->items as $key => $cartOne)
                         <li class="minicart-item">
                             <div class="minicart-thumb">
                                 <a href="product-details.html">
@@ -704,59 +556,33 @@
                             </div>
                             <div class="minicart-content">
                                 <h3 class="product-name">
-                                    <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
+                                    <a href="product-details.html">{{$cartOne['name']}}</a>
                                 </h3>
                                 <p>
-                                    <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                    <span class="cart-price">$100.00</span>
+                                    <span class="cart-quantity">{{$cartOne['quantity']}}<strong>&times;</strong></span>
+                                    <span class="cart-price">{{number_format($cartOne['price'])}} VND</span>
                                 </p>
                             </div>
-                            <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
+                            <a href="{{route('cart.remove', $cartOne['id'])}}" class="minicart-remove"><i class="lnr lnr-cross"></i></a>
                         </li>
-                        <li class="minicart-item">
-                            <div class="minicart-thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/cart/cart-2.jpg" alt="product">
-                                </a>
-                            </div>
-                            <div class="minicart-content">
-                                <h3 class="product-name">
-                                    <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
-                                </h3>
-                                <p>
-                                    <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                    <span class="cart-price">$80.00</span>
-                                </p>
-                            </div>
-                            <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
-                        </li>
+                                @endforeach
+                        @endif
                     </ul>
                 </div>
 
                 <div class="minicart-pricing-box">
                     <ul>
-                        <li>
-                            <span>sub-total</span>
-                            <span><strong>$300.00</strong></span>
-                        </li>
-                        <li>
-                            <span>Eco Tax (-2.00)</span>
-                            <span><strong>$10.00</strong></span>
-                        </li>
-                        <li>
-                            <span>VAT (20%)</span>
-                            <span><strong>$60.00</strong></span>
-                        </li>
+
                         <li class="total">
                             <span>total</span>
-                            <span><strong>$370.00</strong></span>
+                            <span><strong>{{number_format($cart->total_price)}} VND</strong></span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="minicart-button">
                     <a href="{{route('cart.view')}}" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" ><i class="fa fa-shopping-cart"></i>Xem giõ hàng</a>
-{{--                    <a href="{{route('checkout')}}"><i class="fa fa-share"></i> checkout</a>--}}
+                    {{--                    <a href="{{route('checkout')}}"><i class="fa fa-share"></i> checkout</a>--}}
                 </div>
             </div>
         </div>
@@ -776,5 +602,4 @@
 <script src="{{asset('assets/js/active.js')}}"></script>
 </body>
 </html>
-
 

@@ -20,9 +20,7 @@ class CheckoutController extends Controller
     public function form(){
         return view('store.checkout');
     }
-    public function success(){
-        return view('frontend.success');
-    }
+
 
     public function submit_form(Request $request, Cart $cart ){
         $user_id = Auth::id();

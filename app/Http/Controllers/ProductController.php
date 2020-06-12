@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
-<<<<<<< HEAD
-    public function details(){
-
-=======
     protected $productService;
     protected $categoryService;
 
@@ -41,7 +37,7 @@ class ProductController extends Controller
         $this->productService->create($request);
         Session::flash('success','Add Completed');
         return redirect()->route('product.create');
->>>>>>> 5ac0f8ea93cfc6876c4af6f26ddbe94eac46e3ac
+
     }
 
     public function edit($id)
