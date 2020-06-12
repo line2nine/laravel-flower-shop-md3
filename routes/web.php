@@ -52,6 +52,12 @@ Route::group(['prefix' => 'product'], function (){
  Route::get('details/{id}', 'store\ProductController@details')->name('product.details');
 });
 
+Route::group(['prefix' => 'blog'], function (){
+    Route::get('/', 'store\BlogController@index')->name('blog');
+//    Route::get('details/{id}', 'store\BlogController@details')->name('blog.details');
+});
+
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
     Route::post('login', 'Auth\LoginController@login');

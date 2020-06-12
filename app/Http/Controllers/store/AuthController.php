@@ -12,6 +12,7 @@ use App\Http\Requests\AuthRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class AuthController extends Controller
 {
 
@@ -104,8 +105,9 @@ class AuthController extends Controller
         $forgot->password = Hash::make($request->password);
 
         $forgot->save();
-        $message2 = "sua thanh cong";
-        session()->flash('create-forgot', $message2);
+
+//        $message2 = "sua thanh cong";
+//        session()->flash('create-forgot', $message2);
 
         return redirect()->route('account');
     }
