@@ -41,8 +41,12 @@ Route::group(['prefix' => 'checkout'], function () {
     Route::get('/', 'store\CheckoutController@form')->name('checkout');
     Route::post('/', 'store\CheckoutController@submit_form');
 });
-Route::get('forgot-password', 'Mail\MailController@index')->name('mail.show');
-Route::post('forgot-password', 'Mail\MailController@send')->name('mail.send');
+
+Route::get('forgot-password', 'ForgotPasswordController@index')->name('mail.show');
+Route::post('forgot-password', 'ForgotPasswordController@sendMail');
+Route::get('reset-password/token={token}', 'ForgotPasswordController@resetPassword')->name('mail.reset');
+Route::post('reset-password/token={token}', 'ForgotPasswordController@newPass')->name('pass.reset');
+
 Route::group(['prefix' => 'product'], function (){
  Route::get('/', 'store\ProductController@shop')->name('product.shop');
  Route::get('details/{id}', 'store\ProductController@details')->name('product.details');
