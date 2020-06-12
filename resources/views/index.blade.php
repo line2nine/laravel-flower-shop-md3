@@ -6,7 +6,6 @@
     {{session('chuanhap-error')}}
     <p class="text-danger">{{session('logout')}}</p>
     <p class="text-danger">{{session('order-success')}}</p>
-    <button type="button" onclick="sweetalert2()">Nhấn vào đây!</button>
 
 
     <main>
@@ -479,4 +478,3 @@
     <!-- main wrapper end -->
 @stop
 
-   
