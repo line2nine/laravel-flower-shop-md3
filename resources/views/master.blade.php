@@ -23,6 +23,7 @@
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @include('sweetalert::alert')
 </head>
 <body>
 
@@ -117,17 +118,8 @@
                                         </li>
                                         <li><a href="{{route('product.shop')}}">Shop<i></i></a>
                                         </li>
-                                        <li><a href="blog-left-sidebar.html">Blog <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                                <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-                                                <li><a href="blog-grid-full-width.html">blog grid no sidebar</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
-                                                <li><a href="blog-details-left-sidebar.html">blog details left
-                                                        sidebar</a></li>
-                                            </ul>
+                                        <li><a href="{{route('blog')}}">Blog </a>
                                         </li>
-{{--                                        <li><a href="contact-us.html">Contact us</a></li>--}}
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->
@@ -601,6 +593,18 @@
 <script src="{{asset('assets/js/vendor.js')}}"></script>
 <!-- Active Js -->
 <script src="{{asset('assets/js/active.js')}}"></script>
+<script>
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+    )
+</script>
+<script src="sweetalert2.all.min.js"></script>
+
+<!-- Tùy chọn: bao gồm một polyfill cho ES6 Promising cho trình duyệt IE11 và Android -->
+
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 </body>
 </html>
 
