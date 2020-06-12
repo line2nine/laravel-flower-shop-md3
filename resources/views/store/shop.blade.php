@@ -13,7 +13,7 @@
                             <nav aria-label="breadcrumb">
                                 <h1>shop</h1>
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('index')}}"><i class="fa fa-home"></i></a></li>
                                     <li class="breadcrumb-item active" aria-current="page">shop</li>
                                 </ul>
                             </nav>
@@ -44,23 +44,7 @@
                             <!-- single sidebar end -->
 
                             <!-- single sidebar start -->
-{{--                            <div class="sidebar-single">--}}
-{{--                                <h3 class="sidebar-title">price</h3>--}}
-{{--                                <div class="sidebar-body">--}}
-{{--                                    <div class="price-range-wrap">--}}
-{{--                                        <div class="price-range" data-min="0" data-max="1000"></div>--}}
-{{--                                        <div class="range-slider">--}}
-{{--                                            <form action="#" class="d-flex align-items-center justify-content-between">--}}
-{{--                                                <div class="price-input">--}}
-{{--                                                    <label for="amount">Price: </label>--}}
-{{--                                                    <input type="text" id="amount">--}}
-{{--                                                </div>--}}
-{{--                                                <button class="filter-btn">filter</button>--}}
-{{--                                            </form>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+
                             <!-- single sidebar end -->
 
                             <!-- single sidebar start -->
@@ -104,43 +88,7 @@
                             <!-- single sidebar end -->
 
                             <!-- single sidebar start -->
-{{--                            <div class="sidebar-single">--}}
-{{--                                <h3 class="sidebar-title">color</h3>--}}
-{{--                                <div class="sidebar-body">--}}
-{{--                                    <ul class="checkbox-container categories-list">--}}
-{{--                                        <li>--}}
-{{--                                            <div class="custom-control custom-checkbox">--}}
-{{--                                                <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
-{{--                                                <label class="custom-control-label" for="customCheck12">black (20)</label>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="custom-control custom-checkbox">--}}
-{{--                                                <input type="checkbox" class="custom-control-input" id="customCheck13">--}}
-{{--                                                <label class="custom-control-label" for="customCheck13">red (6)</label>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="custom-control custom-checkbox">--}}
-{{--                                                <input type="checkbox" class="custom-control-input" id="customCheck14">--}}
-{{--                                                <label class="custom-control-label" for="customCheck14">blue (8)</label>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="custom-control custom-checkbox">--}}
-{{--                                                <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
-{{--                                                <label class="custom-control-label" for="customCheck11">green (5)</label>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="custom-control custom-checkbox">--}}
-{{--                                                <input type="checkbox" class="custom-control-input" id="customCheck15">--}}
-{{--                                                <label class="custom-control-label" for="customCheck15">pink (4)</label>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+
                             <!-- single sidebar end -->
 
                             <!-- single sidebar start -->
@@ -243,9 +191,7 @@
                                                 <div class="product-label new">
                                                     <span>new</span>
                                                 </div>
-{{--                                                <div class="product-label discount">--}}
-{{--                                                    <span>10%</span>--}}
-{{--                                                </div>-ffgit -}}
+
                                             </div>
                                             <div class="button-group">
                                                 <a href="{{route('wishlist.add', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
@@ -255,11 +201,11 @@
                                         </figure>
                                         <div class="product-caption">
                                             <p class="product-name">
-                                                <a href="product-details.html">{{$product->name}}</a>
+                                                <a href="{{route('product.details', $product->id)}}">{{$product->name}}</a>
                                             </p>
                                             <div class="price-box">
                                                 <span class="price-regular">{{number_format($product->price)}} VND</span>
-{{--                                                <span class="price-old"><del>$50.00</del></span>--}}
+
                                             </div>
                                         </div>
                                     </div>
@@ -276,16 +222,14 @@
                                                 <div class="product-label new">
                                                     <span>new</span>
                                                 </div>
-{{--                                                <div class="product-label discount">--}}
-{{--                                                    <span>10%</span>--}}
-{{--                                                </div>--}}
+
                                             </div>
                                         </figure>
                                         <div class="product-content-list">
-                                            <h5 class="product-name"><a href="product-details.html">{{$product->name}}</a></h5>
+                                            <h5 class="product-name"><a href="{{route('product.details', $product->id)}}">{{$product->name}}</a></h5>
                                             <div class="price-box">
                                                 <span class="price-regular">{{number_format($product->price)}} VND</span>
-{{--                                                <span class="price-old"><del>$60.00</del></span>--}}
+
                                             </div>
                                             <p>{{($product->description)}} VND
                                             </p>
