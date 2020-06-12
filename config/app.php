@@ -166,7 +166,6 @@ return [
 
 
         Laravel\Socialite\SocialiteServiceProvider::class,
-
         /*
          * Package Service Providers...
          */
@@ -237,6 +236,9 @@ return [
 
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+    ],
+
 
     ],
 ];
