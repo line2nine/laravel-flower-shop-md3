@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('auth/google', 'LoginGoogleController@redirectToGoogle');
+Route::get('/callback/google', 'LoginGoogleController@callback');
+
 Route::get('/', 'store\HomeController@index')->name('index');
 Route::get('login', 'store\AuthController@showFormLogin')->name('login');
 Route::post('login', 'store\AuthController@UserLogin');
@@ -89,3 +92,6 @@ Route::group(['prefix' => 'admin'], function () {
         });
     });
 });
+
+
+Route::get('/home', 'HomeController@index')->name('home');

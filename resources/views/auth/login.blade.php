@@ -55,14 +55,18 @@
                                         </div>
                                     </div>
                                     <div class="single-input-item">
-                                        <button type="submit" class="btn btn__bg" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">Đăng nhập</button>
+                                        <div class="row">
+                                            <button type="submit" class="btn btn__bg" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">Đăng nhập</button>
+                                            <a  href="{{ url('auth/google') }}">
+                                                <strong>Login With Google</strong></a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <!-- Login Content End -->
 
-                       
+
                     </div>
                 </div>
             </div>
@@ -71,4 +75,4 @@
     </main>
     <!-- main wrapper end -->
 
-   @stop
+@stop
