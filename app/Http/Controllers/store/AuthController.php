@@ -18,7 +18,7 @@ class AuthController extends Controller
 
     public function showFormLogin()
     {
-        return view('store.login');
+        return view('auth.login');
     }
 
     public function UserLogin(AuthRequests $requests)

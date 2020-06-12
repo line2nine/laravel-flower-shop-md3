@@ -14,8 +14,13 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
+        "laravel/socialite": "^4.4",
         "laravel/tinker": "^2.0",
+<<<<<<< HEAD
         "mongodb/mongodb": "^1.6",
+=======
+        "laravel/ui": "^2.0",
+>>>>>>> 353c2a4f4cffdf7c87a625ba259ca48ab8e7a8c0
         "realrashid/sweet-alert": "^3.1",
         "yoeunes/notify": "^1.0"
     },

@@ -25,8 +25,11 @@
                         @if(\Illuminate\Support\Facades\Session::has('success'))
                             <p style="color: red">{{\Illuminate\Support\Facades\Session::get('success')}}</p>
                         @endif
+                        @if(\Illuminate\Support\Facades\Session::has('error'))
+                            <p style="color: red">{{\Illuminate\Support\Facades\Session::get('error')}}</p>
+                        @endif
                         <div class="panel-body">
-                            <form action="{{route('mail.send')}}" id="register-form" role="form" autocomplete="off" class="form" method="post">
+                            <form action="{{route('mail.show')}}" id="register-form" role="form" autocomplete="off" class="form" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <div class="input-group">
