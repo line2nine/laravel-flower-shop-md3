@@ -26,7 +26,8 @@ class MailController extends Controller
         ];
         if ($user->count() > 0){
             Mail::to($email)->send(new SendMail($detail));
-            return back()->with('success', 'A reset password link has been sent to your email. Please check and open the link to reset your password');
+            return back()->with('success', 'A reset password link has been sent to your email.
+            Please check and open the link to reset your password');
         } else {
             return "ko co";
         }
