@@ -210,8 +210,10 @@
 	})
 
 	$(".minicart-btn").on('click', function(){
-		$("body").addClass('fix');
-		$(".minicart-inner").addClass('show')
+	    if(window.location.href.indexOf("/cart/view") < 0){
+            $("body").addClass('fix');
+            $(".minicart-inner").addClass('show')
+        }
 	})
 
 	$(".offcanvas-close, .minicart-close,.offcanvas-overlay").on('click', function(){
@@ -314,13 +316,13 @@
     /*------- offcanvas mobile menu start -------*/
     var $offCanvasNav = $('.mobile-menu'),
         $offCanvasNavSubMenu = $offCanvasNav.find('.dropdown');
-    
+
     /*Add Toggle Button With Off Canvas Sub Menu*/
     $offCanvasNavSubMenu.parent().prepend('<span class="menu-expand"><i></i></span>');
-    
+
     /*Close Off Canvas Sub Menu*/
     $offCanvasNavSubMenu.slideUp();
-    
+
     /*Category Sub Menu Toggle*/
     $offCanvasNav.on('click', 'li a, li .menu-expand', function(e) {
         var $this = $(this);
@@ -367,7 +369,7 @@
 		});
 	}
 	dropdownAnimation();
-	
+
 
 	// User Changeable Access
 	var activeId = $("#instafeed"),

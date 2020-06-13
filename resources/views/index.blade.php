@@ -308,7 +308,7 @@
                         <div class="product-item mt-40">
                             <figure class="product-thumb">
                                 <a href=""  data-toggle="modal" data-target="#quick_view{{$value->id}}" >
-                                    <img class="pri-img" src="{{asset('assets/img/product/product-1.jpg')}}" alt="product">
+                                    <img class="pri-img" id="img-{{$value->id}}" src="{{asset('assets/img/product/product-1.jpg')}}" alt="product">
                                     <img class="sec-img" src="assets/img/product/product-2.jpg" alt="product">
                                 </a>
                                 <div class="product-badge">
@@ -322,8 +322,7 @@
                                 <div class="button-group">
                                     <a href="{{route('wishlist.add',['id'=>$value->id])}}" data-toggle="tooltip" data-placement="left" title="Yêu thích"><i class="lnr lnr-heart"></i></a>
                                     <a href="#" data-toggle="modal" data-target="#quick_view{{$value->id}}"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="{{route('cart.add',['id'=>$value->id])}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giỏ hàng"><i class="lnr lnr-cart"></i></a>
-
+                                    <a class="add-to-cart" href="{{route('cart.add',['id'=>$value->id])}}" data-id="{{$value->id}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giỏ hàng"><i class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">

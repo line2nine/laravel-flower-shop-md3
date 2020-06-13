@@ -18,6 +18,9 @@
     <link href="{{asset('assets/css/vendor.css')}}" rel="stylesheet">
     <!-- Main Style CSS -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/toastr.css')}}" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="{{asset('js/toastr.js')}}"></script>
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -162,8 +165,8 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="minicart-btn">
-                                            <i class="lnr lnr-cart"></i>
+                                        <a href="javascript:void(0);" class="minicart-btn">
+                                            <i class="lnr lnr-cart" id="my-bag"></i>
                                             <div class="notification">{{$cart->total_quantity}}</div>
                                         </a>
                                     </li>
@@ -593,18 +596,17 @@
 <script src="{{asset('assets/js/vendor.js')}}"></script>
 <!-- Active Js -->
 <script src="{{asset('assets/js/active.js')}}"></script>
-<script>
-    Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-    )
-</script>
-<script src="sweetalert2.all.min.js"></script>
-
+<script src="{{asset('js/cart.js')}}"></script>
+{{--<script>--}}
+{{--    Swal.fire(--}}
+{{--        'Good job!',--}}
+{{--        'You clicked the button!',--}}
+{{--        'success'--}}
+{{--    )--}}
+{{--</script>--}}
 <!-- Tùy chọn: bao gồm một polyfill cho ES6 Promising cho trình duyệt IE11 và Android -->
 
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>--}}
 </body>
 </html>
 

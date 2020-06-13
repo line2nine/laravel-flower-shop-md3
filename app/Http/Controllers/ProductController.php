@@ -23,19 +23,19 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->productService->getAll();
-        return view('products.list',compact('products'));
+        return view('products.list', compact('products'));
     }
 
     public function create()
     {
         $categories = $this->categoryService->getAll();
-        return view('products.create',compact('categories'));
+        return view('products.create', compact('categories'));
     }
 
     public function store(CreateProductRequest $request)
     {
         $this->productService->create($request);
-        Session::flash('success','Add Completed');
+        Session::flash('success', 'Add Completed');
         return redirect()->route('product.create');
 
     }
@@ -44,8 +44,7 @@ class ProductController extends Controller
     {
         $categories = $this->categoryService->getAll();
         $product = $this->productService->find($id);
-//        dd($product);
-        return view('products.edit',compact('product','categories'));
+        return view('products.edit', compact('product', 'categories'));
     }
 
     public function update(UpdateProductRequest $request, $id)
@@ -60,13 +59,13 @@ class ProductController extends Controller
     {
         $product = $this->productService->find($id);
         $product->delete();
-        Session::flash('success','Delete Completed');
+        Session::flash('success', 'Delete Completed');
         return redirect()->route('product.index');
     }
 
     public function detail($id)
     {
         $product = $this->productService->find($id);
-        return view('products.detail',compact('product'));
+        return view('products.detail', compact('product'));
     }
 }

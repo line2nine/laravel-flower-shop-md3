@@ -19,10 +19,12 @@ class ProductRepository
     {
         return $this->product->all();
     }
+
     public function getProductDetails()
     {
         return $this->product->all();
     }
+
     public function getAllShop()
     {
         return $this->product->paginate(9);
@@ -40,7 +42,7 @@ class ProductRepository
 
     public function filter($idCategory)
     {
-        return $this->product->where('category_id','=',$idCategory)->get();
+        return $this->product->where('category_id', '=', $idCategory)->get();
     }
 
     public function searchProduct($keyword)

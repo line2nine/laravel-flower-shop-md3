@@ -54,12 +54,8 @@
                                             <td class="pro-title"><a href="#">{{$cartOne['name']}}</a></td>
                                             <td class="pro-price"><span>{{number_format($cartOne['price'])}}</span></td>
                                             <td class="pro-quantity">
-                                                <form action="{{route('cart.update', ['id' => $cartOne['id']])}} "  method="get">
 {{--                                                    <div class="pro-qty"><input type="text" value="{{$cartOne['quantity']}}"></div>--}}
-                                                    <input type="number" name="quantity" value="{{$cartOne['quantity']}}">
-                                                    <input type="submit" width="5px" value="update">
-                                                </form>
-
+                                                    <input type="number" data-id="{{$cartOne['id']}}" name="quantity" min="1" value="{{$cartOne['quantity']}}">
                                             </td>
                                             <td class="pro-subtotal"><span>{{number_format($cartOne['price'] * $cartOne['quantity'])}} VND</span></td>
                                             <td class="pro-remove"><a href="{{route('cart.remove',['id' => $cartOne['id']] )}}" ><i class="fa fa-trash-o"></i></a></td>

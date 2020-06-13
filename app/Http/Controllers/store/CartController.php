@@ -15,14 +15,26 @@ class CartController extends Controller
     {
         $products = Product::find($id);
         $cart->add($products);
-        return redirect()->back();
+        return response()->json(
+            [
+                'status' => 'success',
+                'totalItem' => $cart->get_total_quantity(),
+                'totalPrice' => $cart->get_total_price(),
+                'listItem' => $cart->items
+            ]);
     }
 
     public function remove(Cart $cart, $id)
     {
 
         $cart->remove($id);
-        return redirect()->back();
+        return response()->json(
+            [
+                'status' => 'success',
+                'totalItem' => $cart->get_total_quantity(),
+                'totalPrice' => $cart->get_total_price(),
+                'listItem' => $cart->items
+            ]);
     }
 
     public function update(Cart $cart, $id)
@@ -34,7 +46,13 @@ class CartController extends Controller
             $quantity = 1;
         }
 
-        return redirect()->back();
+        return response()->json(
+            [
+                'status' => 'success',
+                'totalItem' => $cart->get_total_quantity(),
+                'totalPrice' => $cart->get_total_price(),
+                'listItem' => $cart->items
+            ]);
     }
 
     public function clear(Cart $cart)
