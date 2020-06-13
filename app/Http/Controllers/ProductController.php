@@ -44,6 +44,7 @@ class ProductController extends Controller
     {
         $categories = $this->categoryService->getAll();
         $product = $this->productService->find($id);
+//        dd($product);
         return view('products.edit',compact('product','categories'));
     }
 

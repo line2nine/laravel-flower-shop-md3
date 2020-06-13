@@ -22,6 +22,7 @@
                         </p>
                     @endif
                     <hr>
+                    {{dd($product)}}
                     <form method="post" action="{{route('product.update',['id'=>$product->id])}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -62,8 +63,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Update
-                            </button>
+                            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Update</button>
                             <a class="btn btn-light" href="{{route('product.index')}}">Cancel</a>
                         </div>
                     </form>

@@ -96,6 +96,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'order'], function () {
             Route::get('list', 'OrderController@getAll')->name('order.list');
         });
+        Route::prefix('blog')->group(function (){
+            Route::get('/','BlogController@index')->name('blog.index');
+            Route::get('create','BlogController@create')->name('blog.create');
+            Route::post('create','BlogController@store')->name('blog.store');
+            Route::get('{id}/edit','BlogController@edit')->name('blog.edit');
+            Route::post('{id}/edit','BlogController@update')->name('blog.update');
+            Route::get('{id}/delete','BlogController@destroy')->name('blog.destroy');
+        });
     });
 });
 
