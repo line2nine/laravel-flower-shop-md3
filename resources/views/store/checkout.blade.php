@@ -25,6 +25,8 @@
         <!-- breadcrumb area end -->
 
         <!-- checkout main wrapper start -->
+        <form action="#" method="post">
+            @csrf
         <div class="checkout-page-wrapper section-space pb-0">
             <div class="container">
                 <div class="row">
@@ -35,8 +37,7 @@
                         <div class="checkout-billing-details-wrap">
                             <h2>Chi tiết thanh toán</h2>
                             <div class="billing-form-wrap">
-                                <form action="#" method="post">
-                                    @csrf
+
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="single-input-item">
@@ -59,7 +60,7 @@
                                         <textarea name="note"  cols="30" rows="3" placeholder="Notes "></textarea>
                                     </div>
                                     <button type="submit" class="btn btn__bg"  style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">Đặt hàng</button>
-                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -89,10 +90,7 @@
                                             @endforeach
                                         </tbody>
                                         <tfoot>
-{{--                                            <tr>--}}
-{{--                                                <td>Thành tiền</td>--}}
-{{--                                                <td>$400</td>--}}
-{{--                                            </tr>--}}
+
                                             <tr>
                                                 <td>Shipping</td>
                                                 <td class="d-flex justify-content-center">
@@ -116,7 +114,9 @@
                                             </tr>
                                             <tr>
                                                 <td>Tổng tiền</td>
-                                                <td>{{number_format($cart->total_price)}} VND</td>
+                                                <td>{{number_format($cart->total_price)}} VND
+                                                    <input class="custom-control-input" type="text" value="{{number_format($cart->total_price)}}" name="total_price">
+                                                </td>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -126,7 +126,7 @@
                                     <div class="single-payment-method show">
                                         <div class="payment-method-name">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="cashon" name="paymentmethod" value="cash" class="custom-control-input" checked />
+                                                <input type="radio"  name="paymentmethod" value="COD" class="custom-control-input" checked />
                                                 <label class="custom-control-label" for="cashon">Thanh toán khi giao hàng</label>
                                             </div>
                                         </div>
@@ -137,7 +137,7 @@
                                     <div class="single-payment-method">
                                         <div class="payment-method-name">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="directbank" name="paymentmethod" value="bank" class="custom-control-input" />
+                                                <input type="radio" id="directbank" name="paymentmethod" value="ATM" class="custom-control-input" />
                                                 <label class="custom-control-label" for="directbank">Chuyển khoản qua ngân hàng</label>
                                             </div>
                                         </div>
@@ -166,6 +166,8 @@
                 </div>
             </div>
         </div>
+        </form>
+
         <!-- checkout main wrapper end -->
     </main>
     <!-- main wrapper end -->

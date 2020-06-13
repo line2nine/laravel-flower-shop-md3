@@ -44,10 +44,10 @@ Route::group(['prefix' => 'product'], function (){
  Route::get('/', 'store\ProductController@shop')->name('product.shop');
  Route::get('details/{id}', 'store\ProductController@details')->name('product.details');
 });
-
-
-
-
+Route::group(['prefix' => 'blog'], function (){
+    Route::get('/', 'store\BlogController@index')->name('blog');
+//    Route::get('details/{id}', 'store\BlogController@details')->name('blog.details');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
@@ -85,7 +85,9 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('{id}/detail', 'ProductController@detail')->name('product.detail');
         });
         Route::group(['prefix' => 'order'], function () {
-            Route::get('list', 'OrderController@getAll')->name('order.list');
+            Route::get('list', 'OrderController@getOder')->name('order.list');
+            Route::get('/{id}/detail', 'OrderController@orderDetail')->name('order.detail');
+            Route::post('/{id}/detail', 'OrderController@updateStatus')->name('update.status');
         });
     });
 });

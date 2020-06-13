@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Blog;
 use App\Cart\Cart;
 use App\Cart\wishlist;
 use App\Order;
@@ -60,5 +61,11 @@ class AppServiceProvider extends ServiceProvider
             ]);
 
         });
+//        view()->composer('*', function($view){
+//            $view->with([
+//                'blogs' => Blog::limit(9)->get(),
+//            ]);
+//
+//        });
     }
 }

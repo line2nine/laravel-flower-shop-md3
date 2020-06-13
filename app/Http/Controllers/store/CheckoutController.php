@@ -28,6 +28,10 @@ class CheckoutController extends Controller
         $name = $request->input("name");
         $phone = $request->input("phone");
         $address = $request->input("address");
+        $paymentmethod = $request->input("paymentmethod");
+        $total_price = $request->input("total_price");
+
+
 
 
         if ($orders = Order::create([
@@ -35,7 +39,10 @@ class CheckoutController extends Controller
             'phone' => $phone,
             'address' => $address,
             'user_id' => $user_id,
-            'order_note' =>$order_note
+            'order_note' =>$order_note,
+            'paymentmethod' =>$paymentmethod,
+            'total_price' =>$total_price
+
         ])) {
 
             $order_id = $orders->id;
