@@ -85,6 +85,16 @@
                 <li><a href="{{route('order.list')}}"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
             </ul>
         </li>
+        <li>
+            <a href="#" class="waves-effect">
+                <i class="zmdi zmdi-format-list-bulleted"></i> <span>Blogs</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="{{route('blog.index')}}"><i class="zmdi zmdi-long-arrow-right"></i>List</a></li>
+                <li><a href="{{route('blog.create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Write</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 <!--End sidebar-wrapper-->

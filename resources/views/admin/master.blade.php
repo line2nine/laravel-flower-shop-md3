@@ -26,6 +26,7 @@
     <link href="{{asset('plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
     @notify_css
     @notify_js
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <title>Dashboard</title>
 </head>
 <body class="bg-theme bg-theme2">
@@ -111,5 +112,8 @@
 <!-- Index js -->
 <!-- <script src="/js/index.js"></script> -->
 <script src="{{asset('js/index.js')}}"></script>
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
 </body>
 </html>
