@@ -47,7 +47,7 @@
                                     <td>{{$product->category->name}}</td>
                                     <td>
                                         <a class="btn btn-white btn-round px-3"
-                                           href="{{route('product.edit',['id'=>$product->id])}}"><i
+                                           href="{{route('product.update',['id'=>$product->id])}}"><i
                                                 class="icon-settings"></i>Edit</a>
                                         <a class="btn btn-danger btn-round px-3"
                                            href="{{route('product.delete',['id'=>$product->id])}}"

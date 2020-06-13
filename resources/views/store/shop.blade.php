@@ -184,7 +184,7 @@
                                     <div class="product-item">
                                         <figure class="product-thumb">
                                             <a href="{{route('product.details', $product->id)}}">
-                                                <img class="pri-img" src="assets/img/product/product-1.jpg" alt="product">
+                                                <img class="pri-img" id="img-{{$product->id}}" src="assets/img/product/product-1.jpg" alt="product">
                                                 <img class="sec-img" src="assets/img/product/product-3.jpg" alt="product">
                                             </a>
                                             <div class="product-badge">

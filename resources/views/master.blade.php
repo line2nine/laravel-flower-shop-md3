@@ -18,6 +18,9 @@
     <link href="{{asset('assets/css/vendor.css')}}" rel="stylesheet">
     <!-- Main Style CSS -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/toastr.css')}}" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="{{asset('js/toastr.js')}}"></script>
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -163,7 +166,7 @@
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);" class="minicart-btn">
-                                            <i class="lnr lnr-cart"></i>
+                                            <i class="lnr lnr-cart" id="my-bag"></i>
                                             <div class="notification">{{$cart->total_quantity}}</div>
                                         </a>
                                     </li>
@@ -601,8 +604,6 @@
 {{--        'success'--}}
 {{--    )--}}
 {{--</script>--}}
-<script src="sweetalert2.all.min.js"></script>
-
 <!-- Tùy chọn: bao gồm một polyfill cho ES6 Promising cho trình duyệt IE11 và Android -->
 
 {{--<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>--}}

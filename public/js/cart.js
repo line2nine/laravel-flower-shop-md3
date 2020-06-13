@@ -8,17 +8,21 @@ $(document).ready(function () {
             success: function (result) {
                 if (result.status == 'success') {
                     $('.minicart-btn .notification').html(result.totalItem);
+                    toastr.success('Success', '', {
+                        timeOut: 800,
+                        showMethod: 'slideDown',
+                    });
                     var listItem = '';
                     $.each(result.listItem, function (key, value) {
                         listItem += '<li class="minicart-item">\n' +
                             '                            <div class="minicart-thumb">\n' +
-                            '                                <a href="product/details/'+value.id+'">\n' +
+                            '                                <a href="product/details/' + value.id + '">\n' +
                             '                                    <img src="assets/img/cart/cart-1.jpg" alt="product">\n' +
                             '                                </a>\n' +
                             '                            </div>\n' +
                             '                            <div class="minicart-content">\n' +
                             '                                <h3 class="product-name">\n' +
-                            '                                    <a href="product/details/'+value.id+'">' + value.name + '</a>\n' +
+                            '                                    <a href="product/details/' + value.id + '">' + value.name + '</a>\n' +
                             '                                </h3>\n' +
                             '                                <p>\n' +
                             '                                    <span class="cart-quantity">' + value.quantity + '<strong>×</strong></span>\n' +
@@ -30,7 +34,6 @@ $(document).ready(function () {
                     });
                     $(".minicart-item-wrapper ul").html(listItem);
                     $(".minicart-pricing-box ul .total strong").html(formatMoney(result.totalPrice, 0, ".", ",") + ' VND');
-
                 }
             }
         })

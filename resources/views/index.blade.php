@@ -308,7 +308,7 @@
                         <div class="product-item mt-40">
                             <figure class="product-thumb">
                                 <a href=""  data-toggle="modal" data-target="#quick_view{{$value->id}}" >
-                                    <img class="pri-img" src="{{asset('assets/img/product/product-1.jpg')}}" alt="product">
+                                    <img class="pri-img" id="img-{{$value->id}}" src="{{asset('assets/img/product/product-1.jpg')}}" alt="product">
                                     <img class="sec-img" src="assets/img/product/product-2.jpg" alt="product">
                                 </a>
                                 <div class="product-badge">
