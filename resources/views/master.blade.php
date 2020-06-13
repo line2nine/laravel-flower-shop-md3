@@ -162,7 +162,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="minicart-btn">
+                                        <a href="javascript:void(0);" class="minicart-btn">
                                             <i class="lnr lnr-cart"></i>
                                             <div class="notification">{{$cart->total_quantity}}</div>
                                         </a>
@@ -593,18 +593,19 @@
 <script src="{{asset('assets/js/vendor.js')}}"></script>
 <!-- Active Js -->
 <script src="{{asset('assets/js/active.js')}}"></script>
-<script>
-    Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-    )
-</script>
+<script src="{{asset('js/cart.js')}}"></script>
+{{--<script>--}}
+{{--    Swal.fire(--}}
+{{--        'Good job!',--}}
+{{--        'You clicked the button!',--}}
+{{--        'success'--}}
+{{--    )--}}
+{{--</script>--}}
 <script src="sweetalert2.all.min.js"></script>
 
 <!-- Tùy chọn: bao gồm một polyfill cho ES6 Promising cho trình duyệt IE11 và Android -->
 
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>--}}
 </body>
 </html>
 

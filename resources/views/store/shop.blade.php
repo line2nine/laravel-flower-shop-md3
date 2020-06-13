@@ -196,7 +196,7 @@
                                             <div class="button-group">
                                                 <a href="{{route('wishlist.add', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
                                                 <a href="{{route('product.details', $product->id)}}" data-toggle="modal" data-target="#quick_view.{{$product->id}}"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                                <a href="{{route('cart.add', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giõ hàng"><i class="lnr lnr-cart"></i></a>
+                                                <a class="add-to-cart" href="{{route('cart.add', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Thêm vào giõ hàng"><i class="lnr lnr-cart"></i></a>
                                             </div>
                                         </figure>
                                         <div class="product-caption">
