@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Blog;
 use App\Cart\Cart;
 use App\Cart\wishlist;
+use App\Category;
 use App\Order;
 use App\Product;
 use App\OrderDetail;
@@ -36,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
+
         view()->composer('*', function($view){
             $view->with([
                 'order' => new Order()
@@ -61,11 +63,11 @@ class AppServiceProvider extends ServiceProvider
             ]);
 
         });
-//        view()->composer('*', function($view){
-//            $view->with([
-//                'blogs' => Blog::limit(9)->get(),
-//            ]);
-//
-//        });
+        view()->composer('*', function($view){
+            $view->with([
+                'categories' =>  Category::all(),
+            ]);
+
+        });
     }
 }

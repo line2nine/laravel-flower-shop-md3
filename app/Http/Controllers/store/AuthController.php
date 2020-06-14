@@ -119,5 +119,8 @@ class AuthController extends Controller
         session()->flash('logout', $message2);
         return redirect()->route('index');
     }
+//    public function resetPassword(){
+//       return view('store.resetPassword');
+//    }
 
 }

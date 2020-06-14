@@ -23,6 +23,7 @@ class CheckoutController extends Controller
 
 
     public function submit_form(Request $request, Cart $cart ){
+
         $user_id = Auth::id();
         $order_note = $request->input("note");
         $name = $request->input("name");
@@ -30,6 +31,7 @@ class CheckoutController extends Controller
         $address = $request->input("address");
         $paymentmethod = $request->input("paymentmethod");
         $total_price = $request->input("total_price");
+        $email = $request->input("email");
 
 
 
@@ -40,8 +42,9 @@ class CheckoutController extends Controller
             'address' => $address,
             'user_id' => $user_id,
             'order_note' =>$order_note,
-            'paymentmethod' =>$paymentmethod,
-            'total_price' =>$total_price
+            'paymentmethod' => $paymentmethod,
+            'total_price' => $total_price,
+            'email' => $email,
 
         ])) {
 
@@ -56,10 +59,18 @@ class CheckoutController extends Controller
                     'price' =>$price
                 ]);
             }
-//            Mail::send('email.contacct',[
-//                'name' => $request->name;
-//
-//            ]);
+            $data = [
+                'name' => $request->name,
+                'email'=>$request->email,
+            ];
+            $email = [
+                'xuanhoa93thds@gmail.com',
+                $data['email']
+            ];
+            Mail::send('email.viewEmail',$data,function ($mes) use ($data,$email ){
+                $mes->from('xuanhoa93thds@gmail.com');
+                $mes->to($email,'email.viewEmail')->subject('Cảm ơn quý khách');
+            });
             session(['cart' => '']);
             $message = "dat hang thanh cong";
             session()->flash('order-success',$message);

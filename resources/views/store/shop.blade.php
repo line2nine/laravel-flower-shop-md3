@@ -36,8 +36,8 @@
                                 <h3 class="sidebar-title">Danh mục</h3>
                                 <div class="sidebar-body">
                                     <ul class="shop-categories">
+{{--                                        {{dd($categories)}}--}}
                                         <li><a href="#">Jasmine <span>10</span></a></li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -150,9 +150,7 @@
                                                 <a class="active" href="#" data-target="grid-view" data-toggle="tooltip" title="Grid View"><i class="fa fa-th"></i></a>
                                                 <a href="#" data-target="list-view" data-toggle="tooltip" title="List View"><i class="fa fa-list"></i></a>
                                             </div>
-                                            <div class="product-amount">
-                                                <p>Showing 1–5 of 8 results</p>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 order-1 order-md-2">
@@ -161,12 +159,10 @@
                                                 <p>Sắp xếp theo: </p>
                                                 <select class="nice-select" name="sortby">
                                                     <option value="trending">Mặc định</option>
-                                                    <option value="sales">Name (A - Z)</option>
-                                                    <option value="sales">Name (Z - A)</option>
-                                                    <option value="rating">Price (Low &gt; High)</option>
-                                                    <option value="date">Rating (Lowest)</option>
-                                                    <option value="price-asc">Model (A - Z)</option>
-                                                    <option value="price-asc">Model (Z - A)</option>
+                                                    <option value="sales">Mới nhất</option>
+                                                    <option value="sales">Giá tăng dần</option>
+                                                    <option value="rating">Giá giảm dần</option>
+
                                                 </select>
                                             </div>
                                         </div>

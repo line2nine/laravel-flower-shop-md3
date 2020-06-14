@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Store;
 use App\Http\Controllers\Controller;
 use App\Http\Services\ProductService;
 use Illuminate\Http\Request;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,10 @@ class ProductController extends Controller
     public function shop()
     {
         $products = $this->homeService->getAllShop();
-        return view('store.shop', compact('products'));
+        $category = Category::first();
+        $categories = Category::all();
+//        dd($categories);
+        return view('store.shop', compact('products','category','categories'));
     }
 
     public function details($id)

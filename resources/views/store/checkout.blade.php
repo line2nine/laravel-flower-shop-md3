@@ -55,6 +55,10 @@
                                         <label class="required">Số điện thoại</label>
                                         <input type="number" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}"  placeholder="Phone" required name="phone" />
                                     </div>
+                                <div class="single-input-item">
+                                    <label class="required">Email</label>
+                                    <input type="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}"  placeholder="email" required name="email" />
+                                </div>
                                     <div class="single-input-item">
                                         <label for="ordernote">Ghi chú</label>
                                         <textarea name="note"  cols="30" rows="3" placeholder="Notes "></textarea>
@@ -114,8 +118,8 @@
                                             </tr>
                                             <tr>
                                                 <td>Tổng tiền</td>
-                                                <td>{{number_format($cart->total_price)}} VND
-                                                    <input class="custom-control-input" type="text" value="{{number_format($cart->total_price)}}" name="total_price">
+                                                <td><b>{{number_format($cart->total_price)}}.VND</b>
+                                                    <input  type="hidden" value="{{$cart->total_price}}" name="total_price">
                                                 </td>
                                             </tr>
                                         </tfoot>

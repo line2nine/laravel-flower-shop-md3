@@ -25,7 +25,7 @@
         <!-- breadcrumb area end -->
 
         <!-- login register wrapper start -->
-        <div class="login-register-wrapper section-space pb-0">
+        <div class="login-register-wrapper section-space pb-0" style="margin-left: 17%">
             <div class="container">
                 <div class="member-area-from-wrap">
                     <div class="row">
@@ -51,7 +51,7 @@
                                                     <label class="custom-control-label" for="rememberMe">Nhớ mật khẩu</label>
                                                 </div>
                                             </div>
-                                            <a href="#" class="forget-pwd">Quên mật khẩu?</a>
+{{--                                            <a href="{{route('resetPassword')}}" class="forget-pwd">Quên mật khẩu?</a>--}}
                                         </div>
                                     </div>
                                     <div class="single-input-item">

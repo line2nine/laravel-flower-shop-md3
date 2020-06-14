@@ -14,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'store\HomeController@index')->name('index');
+Route::get('search', 'store\HomeController@search')->name('search');
 Route::get('login', 'store\AuthController@showFormLogin')->name('login');
 Route::post('login', 'store\AuthController@UserLogin');
 Route::get('register', 'store\AuthController@register')->name('register');
 Route::post('register', 'store\AuthController@store');
 Route::get('account', 'store\AuthController@account')->name('account');
 Route::get('forgot', 'store\AuthController@forgot')->name('forgot');
+//Route::get('resetPassword', 'store\AuthController@resetPassword')->name('resetPassword');
+//Route::post('resetPassword', 'store\AuthController@updateResetPassword')->name('update.resetPassword');
 Route::post('forgot', 'store\AuthController@update')->name('update');
 Route::get('logout', 'store\AuthController@logout')->name('logout');
 Route::group(['prefix' => 'wishlist'], function () {

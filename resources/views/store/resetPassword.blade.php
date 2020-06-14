@@ -14,10 +14,10 @@
                     <div class="col-12">
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb">
-                                <h1>đăng ký</h1>
+                                <h1>Đổi mật khẩu</h1>
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">đăng ký</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Đổi mật khẩu</li>
                                 </ul>
                             </nav>
                         </div>
@@ -35,22 +35,12 @@
                         <!-- Register Content Start -->
                         <div class="col-lg-10">
                             <div class="login-reg-form-wrap sign-up-form">
-                                <h2>đăng ký</h2>
-                                {{session('create-error')}}
+                                <h2>Đổi mật khẩu</h2>
 
-                                <form action="{{route('register')}}" method="post">
+                                <form action="{{route('update.resetPassword')}}" method="post">
                                     @csrf
                                     <div class="single-input-item">
                                         <input type="text" name="name" placeholder="Full Name" required />
-                                    </div>
-                                    <div class="single-input-item">
-                                        <input type="email" placeholder="Enter your Email" required  name="email"/>
-                                    </div>
-                                     <div class="single-input-item">
-                                        <input type="text" placeholder="Enter your Address" required name="address" />
-                                    </div>
-                                     <div class="single-input-item">
-                                        <input type="number" placeholder="Enter your Phone" required name="phone" />
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -89,4 +79,4 @@
     </main>
     <!-- main wrapper end -->
 
-   @stop
+@stop

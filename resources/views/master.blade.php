@@ -68,7 +68,7 @@
                 <div class="row align-items-center position-relative">
 
                     <!-- start logo area -->
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <div class="logo">
                             <a href="{{route('index')}}">
                                 <img src="{{asset('assets/img/logo/logo.png')}}" alt="">
@@ -78,37 +78,26 @@
                     <!-- start logo area -->
 
                     <!-- main menu area start -->
-                    <div class="col-lg-6 position-static">
+                    <div class="col-lg-4 position-static">
                         <div class="main-menu-area">
                             <div class="main-menu">
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
 
-                                        <li class="active"><a href="index.html">Trang chủ <i
-                                                        class="fa fa-angle-down"></i></a>
-{{--                                            <ul class="dropdown">--}}
-{{--                                                <li><a href="index.html">Home version 01</a></li>--}}
-{{--                                                <li><a href="index-2.html">Home version 02</a></li>--}}
-{{--                                                <li><a href="index-3.html">Home version 03</a></li>--}}
-{{--                                                <li><a href="index-4.html">Home version 04</a></li>--}}
-{{--                                            </ul>--}}
+                                        <li class="active"><a href="index.html">Trang chủ</a>
+
                                         </li>
                                         <li class="static"><a href="#">Danh mục <i class="fa fa-angle-down"></i></a>
                                             <ul class="megamenu dropdown">
-{{--                                                <li class="mega-title"><a href="#">column 01</a>--}}
+                                                @foreach($categories as $category)
+                                                <li>
                                                     <ul>
-                                                        <li><a href="shop.html">shop grid left
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-grid-right-sidebar.html">shop grid right
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">shop list left
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">shop list right
-                                                                sidebar</a></li>
+                                                        <li><a href="shop.html">{{$category->name}}</a></li>
+
                                                     </ul>
                                                 </li>
-
+                                                @endforeach
                                                 <li class="megamenu-banners d-none d-lg-block">
                                                     <a href="product-details.html">
                                                         <img src="assets/img/banner/img-bottom-menu.jpg" alt="">
@@ -127,17 +116,21 @@
                         </div>
                     </div>
                     <!-- main menu area end -->
-
+                    <div class="col-lg-2" style="padding: 0px ; margin-left: 90px; margin-top: 30px;position: relative ">
+                        <form action="{{route('search')}}">
+                            <div class="" >
+                                <input class="form-control input-sm" type="text" placeholder="search" required name="key" />
+                                <span><button type="submit"></button></span>
+                            </div>
+                        </form>
+                    </div>
                     <!-- mini cart area start -->
-                    <div class="col-lg-3">
+
+                    <div class="col-lg-2" style="padding: 0px">
                         <div class="header-configure-wrapper">
                             <div class="header-configure-area">
                                 <ul class="nav justify-content-end">
-                                    <li>
-                                        <a href="#" class="offcanvas-btn">
-                                            <i class="lnr lnr-magnifier"></i>
-                                        </a>
-                                    </li>
+
                                     <li class="user-hover">
                                         <a href="#">
                                             <i class="lnr lnr-user"></i>
@@ -158,7 +151,8 @@
                                     <li>
                                         <a href="{{route('wishlist')}}">
                                             <i class="lnr lnr-heart"></i>
-                                            <div class="notification">0</div>
+
+                                            <div class="notification">{{count($wishlist->items)}}</div>
                                         </a>
                                     </li>
                                     <li>
@@ -172,6 +166,8 @@
                         </div>
                     </div>
                     <!-- mini cart area end -->
+
+
 
                 </div>
             </div>

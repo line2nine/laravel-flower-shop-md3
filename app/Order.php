@@ -9,7 +9,7 @@ class Order extends Model
     public $timestamps = false;
 
     protected $table = 'orders';
-    protected $fillable = ['name' ,'order_note','phone','address','user_id','payment' ];
+    protected $fillable = ['name' ,'order_note','phone','address','user_id','paymentmethod','total_price','email' ];
 
     public function orderDetail()
     {

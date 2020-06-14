@@ -36,12 +36,10 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4">
                                         <div class="myaccount-tab-menu nav" role="tablist">
-{{--                                            <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>--}}
-{{--                                                Dashboard</a>--}}
-                                            <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
-                                                Giõ hàng</a>
-{{--                                            <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>--}}
-{{--                                                address</a>--}}
+
+{{--                                            <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i>--}}
+{{--                                               <button> Giõ hàng</button></a>--}}
+
                                             <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account
                                                 Details</a>
                                             <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i>Đăng xuất</a>
@@ -55,35 +53,37 @@
                                             <!-- Single Tab Content Start -->
 
                                             <!-- Single Tab Content Start -->
-                                            <div class="tab-pane fade active" id="orders" role="tabpanel">
-                                                <div class="myaccount-content">
-                                                    <h3>Orders</h3>
-                                                    <div class="myaccount-table table-responsive text-center">
-                                                        <table class="table table-bordered">
-                                                            <thead class="thead-light">
-                                                                <tr>
-                                                                    <th>Đặt hàng</th>
-                                                                    <th>Ngày đặt</th>
-                                                                    <th>Trạng thái</th>
-                                                                    <th>Tổng tiền</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>Aug 22, 2019</td>
-                                                                    <td>Pending</td>
-                                                                    <td>$3000</td>
-                                                                    <td><a style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" href="{{route('cart.view')}}" class="btn btn__bg">Xem</a>
-                                                                    </td>
-                                                                </tr>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
+{{--                                            <div class="tab-pane fade active" id="orders" role="tabpanel">--}}
+{{--                                                <div class="myaccount-content">--}}
+{{--                                                    <h3>Đơn đặt hàng</h3>--}}
+{{--                                                    <div class="myaccount-table table-responsive text-center">--}}
+{{--                                                        <table class="table table-bordered">--}}
+{{--                                                            <thead class="thead-light">--}}
+{{--                                                                <tr>--}}
+{{--                                                                    <th>Đặt hàng</th>--}}
+{{--                                                                    <th>Ngày đặt</th>--}}
+{{--                                                                    <th>Trạng thái</th>--}}
+{{--                                                                    <th>Tổng tiền</th>--}}
+{{--                                                                    <th></th>--}}
+{{--                                                                </tr>--}}
+{{--                                                            </thead>--}}
+{{--                                                            <tbody>--}}
+{{--                                                           --}}
+{{--                                                                <tr>--}}
+{{--                                                                    <td></td>--}}
+{{--                                                                    <td></td>--}}
+{{--                                                                    <td>Pending</td>--}}
+{{--                                                                    <td>$3000</td>--}}
+{{--                                                                    <td><a style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" href="{{route('cart.view')}}" class="btn btn__bg">Xem</a>--}}
+{{--                                                                    </td>--}}
+{{--                                                                </tr>--}}
+{{--                                                                </tr>--}}
+{{--                                                           --}}
+{{--                                                            </tbody>--}}
+{{--                                                        </table>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
                                             <!-- Single Tab Content End -->
 
                                             <!-- Single Tab Content Start -->
