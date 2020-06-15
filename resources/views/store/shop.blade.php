@@ -37,7 +37,6 @@
                                 <div class="sidebar-body">
                                     <ul class="shop-categories">
                                         <li><a href="#">Jasmine <span>10</span></a></li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -49,39 +48,22 @@
 
                             <!-- single sidebar start -->
                             <div class="sidebar-single">
-                                <h3 class="sidebar-title">brand</h3>
+                                <h3 class="sidebar-title">Lọc giá</h3>
                                 <div class="sidebar-body">
                                     <ul class="checkbox-container categories-list">
                                         <li>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                <label class="custom-control-label" for="customCheck2">Studio (3)</label>
-                                            </div>
+                                            <a href="?price=1">Dưới 100k</a>
                                         </li>
                                         <li>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                <label class="custom-control-label" for="customCheck3">Hastech (4)</label>
-                                            </div>
+                                            <a href="?price=2">100k->300k</a>
                                         </li>
                                         <li>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                <label class="custom-control-label" for="customCheck4">Quickiin (15)</label>
-                                            </div>
+                                            <a href="?price=3">300k->500k</a>
                                         </li>
                                         <li>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label" for="customCheck1">Graphic corner (10)</label>
-                                            </div>
+                                            <a href="?price=4">500k->trở lên</a>
                                         </li>
-                                        <li>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                                <label class="custom-control-label" for="customCheck5">devItems (12)</label>
-                                            </div>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -150,26 +132,23 @@
                                                 <a class="active" href="#" data-target="grid-view" data-toggle="tooltip" title="Grid View"><i class="fa fa-th"></i></a>
                                                 <a href="#" data-target="list-view" data-toggle="tooltip" title="List View"><i class="fa fa-list"></i></a>
                                             </div>
-                                            <div class="product-amount">
-                                                <p>Showing 1–5 of 8 results</p>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 order-1 order-md-2">
-                                        <div class="top-bar-right">
-                                            <div class="product-short">
-                                                <p>Sắp xếp theo: </p>
-                                                <select class="nice-select" name="sortby">
-                                                    <option value="trending">Mặc định</option>
-                                                    <option value="sales">Name (A - Z)</option>
-                                                    <option value="sales">Name (Z - A)</option>
-                                                    <option value="rating">Price (Low &gt; High)</option>
-                                                    <option value="date">Rating (Lowest)</option>
-                                                    <option value="price-asc">Model (A - Z)</option>
-                                                    <option value="price-asc">Model (Z - A)</option>
-                                                </select>
+                                        <form action="" id="form_order" method="get">
+                                            <div class="top-bar-right">
+                                                <div class="product-short">
+                                                    <p>Sắp xếp theo: </p>
+                                                    <select class="orderby" id="orderby" name="orderby">
+                                                        <option value="">Mặc định</option>
+                                                        <option value="desc">Mới nhất</option>
+                                                        <option value="price_max">Giá tăng dần</option>
+                                                        <option value="price_min">Giá giảm dần</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -177,6 +156,7 @@
 
                             <!-- product item list wrapper start -->
                             <div class="shop-product-wrap grid-view row mbn-40">
+                                <p class="text-danger">{{session('filter-error')}}</p>
                                 <!-- product single item start -->
                                @foreach($products as $product)
                                 <div class="col-md-4 col-sm-6">
@@ -188,7 +168,7 @@
                                                 <img class="sec-img" src="assets/img/product/product-3.jpg" alt="product">
                                             </a>
                                             <div class="product-badge">
-                                                <div class="product-label new">
+                                                <div style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" class="product-label new">
                                                     <span>new</span>
                                                 </div>
 

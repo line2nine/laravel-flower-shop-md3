@@ -76,6 +76,13 @@
                                     </div>
                                     <div class="single-input-item">
                                         <button class="btn btn__bg" type="submit" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">Đăng ký</button>
+                                        &nbsp
+                                        &nbsp
+                                        OR VIA
+                                        &nbsp
+                                        &nbsp
+                                        <a class="btn btn__bg" href="{{ url('auth/google') }}" >
+                                            <i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                     </div>
                                 </form>
                             </div>

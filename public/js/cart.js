@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(document).on('click', '.add-to-cart', function (e) {
+    $(document).on('click', '.add-to-cart, .btn-cart2', function (e) {
         e.preventDefault();
         var productId = $(this).attr('data-id')
         $.ajax({

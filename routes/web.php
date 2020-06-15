@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('auth/google', 'LoginGoogleController@redirectToGoogle');
 Route::get('/callback/google', 'LoginGoogleController@callback');
-
+Route::get('search', 'store\HomeController@search')->name('search');
 Route::get('/', 'store\HomeController@index')->name('index');
 Route::get('login', 'store\AuthController@showFormLogin')->name('login');
 Route::post('login', 'store\AuthController@UserLogin');
@@ -61,7 +61,7 @@ Route::group(['prefix' => 'blog'], function (){
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Auth\LoginController@showFormLogin')->name('admin.login');
     Route::post('login', 'Auth\LoginController@login');
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth','check.role'])->group(function () {
         Route::get('logout', 'Auth\LoginController@logout')->name('admin.logout');
         Route::get('dashboard', 'UserController@showDashboard')->name('admin.dashboard');
         Route::group(['prefix' => 'user'], function () {
@@ -94,7 +94,9 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('{id}/detail', 'ProductController@detail')->name('product.detail');
         });
         Route::group(['prefix' => 'order'], function () {
-            Route::get('list', 'OrderController@getAll')->name('order.list');
+            Route::get('list', 'OrderController@getOder')->name('order.list');
+            Route::get('/{id}/detail', 'OrderController@orderDetail')->name('order.detail');
+            Route::post('/{id}/detail', 'OrderController@updateStatus')->name('update.status');
         });
         Route::prefix('blog')->group(function (){
             Route::get('/','BlogController@index')->name('blog.index');

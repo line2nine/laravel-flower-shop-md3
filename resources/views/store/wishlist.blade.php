@@ -61,7 +61,7 @@
                                             <td class="pro-price"><span>{{number_format($MyWishlist['price'])}}.VND</span></td>
 {{--                                            <td class="pro-quantity"><span class="text-success">{{$MyWishlist['status']}}</span></td>--}}
                                             <td class="pro-subtotal"><a style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" href="{{route('cart.add',$MyWishlist['id'])}}" class="btn btn__bg">Thêm vào giõ hàng</a></td>
-                                            <td class="pro-remove"><a  href="{{route('wishlist.remove',$MyWishlist['id'])}}"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="pro-remove1"><a  href="{{route('wishlist.remove',$MyWishlist['id'])}}"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
                                         @endforeach
                                     @endif

@@ -21,6 +21,8 @@
     <link href="{{asset('css/toastr.css')}}" rel="stylesheet">
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="{{asset('js/toastr.js')}}"></script>
+    @notify_css
+    @notify_js
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -38,28 +40,28 @@
         <div class="header-top bdr-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="welcome-message">
-                            <p>Chào mừng bạn đến với cửa hàng trực tuyến Floda</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-right">
-                        <div class="header-top-settings">
-                            <ul class="nav align-items-center justify-content-end">
-                                <li class="language">
-                                    <span>Language:</span>
-                                    <img src="assets/img/icon/en.png" alt="flag"> English
-                                    <i class="fa fa-angle-down"></i>
-                                    <ul class="dropdown-list">
-                                        <li><a href="#"><img src="{{asset('assets/img/icon/en.png')}}" alt="flag">
-                                                english</a></li>
-                                        <li><a href="#"><img src="{{asset('assets/img/icon/fr.png')}}" alt="flag">
-                                                vietnam</a></li>
-                                    </ul>
-                                </li>
+{{--                    <div class="col-lg-6">--}}
+{{--                        <div class="welcome-message">--}}
+{{--                            <p>Chào mừng bạn đến với cửa hàng trực tuyến Floda</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-6 text-right">--}}
+{{--                        <div class="header-top-settings">--}}
+{{--                            <ul class="nav align-items-center justify-content-end">--}}
+{{--                                <li class="language">--}}
+{{--                                    <span>Language:</span>--}}
+{{--                                    <img src="assets/img/icon/en.png" alt="flag"> English--}}
+{{--                                    <i class="fa fa-angle-down"></i>--}}
+{{--                                    <ul class="dropdown-list">--}}
+{{--                                        <li><a href="#"><img src="{{asset('assets/img/icon/en.png')}}" alt="flag">--}}
+{{--                                                english</a></li>--}}
+{{--                                        <li><a href="#"><img src="{{asset('assets/img/icon/fr.png')}}" alt="flag">--}}
+{{--                                                vietnam</a></li>--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
 
-                        </div>
-                    </div>
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -71,7 +73,7 @@
                 <div class="row align-items-center position-relative">
 
                     <!-- start logo area -->
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <div class="logo">
                             <a href="{{route('index')}}">
                                 <img src="{{asset('assets/img/logo/logo.png')}}" alt="">
@@ -81,37 +83,26 @@
                     <!-- start logo area -->
 
                     <!-- main menu area start -->
-                    <div class="col-lg-6 position-static">
+                    <div class="col-lg-4 position-static">
                         <div class="main-menu-area">
                             <div class="main-menu">
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
 
-                                        <li class="active"><a href="index.html">Trang chủ <i
-                                                        class="fa fa-angle-down"></i></a>
-{{--                                            <ul class="dropdown">--}}
-{{--                                                <li><a href="index.html">Home version 01</a></li>--}}
-{{--                                                <li><a href="index-2.html">Home version 02</a></li>--}}
-{{--                                                <li><a href="index-3.html">Home version 03</a></li>--}}
-{{--                                                <li><a href="index-4.html">Home version 04</a></li>--}}
-{{--                                            </ul>--}}
+                                        <li class="active"><a href="{{route('index')}}">Trang chủ</a>
+
                                         </li>
                                         <li class="static"><a href="#">Danh mục <i class="fa fa-angle-down"></i></a>
                                             <ul class="megamenu dropdown">
-{{--                                                <li class="mega-title"><a href="#">column 01</a>--}}
-                                                    <ul>
-                                                        <li><a href="shop.html">shop grid left
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-grid-right-sidebar.html">shop grid right
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">shop list left
-                                                                sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">shop list right
-                                                                sidebar</a></li>
-                                                    </ul>
-                                                </li>
+                                                @foreach($categories as $category)
+                                                    <li>
+                                                        <ul>
+                                                            <li><a href="shop.html">{{$category->name}}</a></li>
 
+                                                        </ul>
+                                                    </li>
+                                                @endforeach
                                                 <li class="megamenu-banners d-none d-lg-block">
                                                     <a href="product-details.html">
                                                         <img src="assets/img/banner/img-bottom-menu.jpg" alt="">
@@ -130,17 +121,21 @@
                         </div>
                     </div>
                     <!-- main menu area end -->
-
+                    <div class="col-lg-2" style="padding: 0px ; margin-left: 90px; margin-top: 30px;position: relative ">
+                        <form action="{{route('search')}}">
+                            <div class="" >
+                                <input class="form-control input-sm" type="text" placeholder="search" required name="key" />
+                                <span><button type="submit"></button></span>
+                            </div>
+                        </form>
+                    </div>
                     <!-- mini cart area start -->
-                    <div class="col-lg-3">
+
+                    <div class="col-lg-2" style="padding: 0px">
                         <div class="header-configure-wrapper">
                             <div class="header-configure-area">
                                 <ul class="nav justify-content-end">
-                                    <li>
-                                        <a href="#" class="offcanvas-btn">
-                                            <i class="lnr lnr-magnifier"></i>
-                                        </a>
-                                    </li>
+
                                     <li class="user-hover">
                                         <a href="#">
                                             <i class="lnr lnr-user"></i>
@@ -161,12 +156,13 @@
                                     <li>
                                         <a href="{{route('wishlist')}}">
                                             <i class="lnr lnr-heart"></i>
-                                            <div class="notification">0</div>
+
+                                            <div class="notification">{{count($wishlist->items)}}</div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0);" class="minicart-btn">
-                                            <i class="lnr lnr-cart" id="my-bag"></i>
+                                        <a href="#" class="minicart-btn">
+                                            <i class="lnr lnr-cart"></i>
                                             <div class="notification">{{$cart->total_quantity}}</div>
                                         </a>
                                     </li>
@@ -175,6 +171,8 @@
                         </div>
                     </div>
                     <!-- mini cart area end -->
+
+
 
                 </div>
             </div>
@@ -373,7 +371,7 @@
                             <a href="#">0123456789</a>
                         </li>
                         <li><i class="fa fa-envelope-o"></i>
-                            <a href="#">info@yourdomain.com</a>
+                            <a href="#">folida@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -396,7 +394,7 @@
 <footer class="footer-wrapper">
 
     <!-- footer widget area start -->
-    <div class="footer-widget-area">
+    <div  class="footer-widget-area">
         <div class="container">
             <div class="footer-widget-inner section-space">
                 <div class="row mbn-30">
@@ -404,20 +402,20 @@
                     <div class="col-lg-5 col-md-6 col-sm-8">
                         <div class="footer-widget-item mb-30">
                             <div class="footer-widget-title">
-                                <h5>My account</h5>
+                                <h5>Liên hệ</h5>
                             </div>
                             <ul class="footer-widget-body accout-widget">
                                 <li class="address">
                                     <em><i class="lnr lnr-map-marker"></i></em>
-                                    184 Main Rd E, St Albans VIC 3021, Australia
+                                    15 TT04, Mon city.
                                 </li>
                                 <li class="email">
                                     <em><i class="lnr lnr-envelope"></i>Mail us: </em>
-                                    <a href="mailto:test@yourdomain.com">yourmail@gmail.com</a>
+                                    <a href="mailto:test@yourdomain.com">foloda@gmail.com</a>
                                 </li>
                                 <li class="phone">
                                     <em><i class="lnr lnr-phone-handset"></i> Phones: </em>
-                                    <a href="tel:(012)800456789-987">(012) 800 456 789-987</a>
+                                    <a href="tel:(012)800456789-987">(+84) 012345678</a>
                                 </li>
                             </ul>
                             <div class="payment-method">
@@ -445,38 +443,19 @@
                     <!-- footer widget item end -->
 
                     <!-- footer widget item start -->
-                    <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div  class="col-lg-2 col-md-6 col-sm-6">
                         <div class="footer-widget-item mb-30">
                             <div class="footer-widget-title">
                                 <h5>information</h5>
                             </div>
                             <ul class="footer-widget-body">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Exchanges</a></li>
-                                <li><a href="#">Shipping</a></li>
+                                <li><a href="{{route('index')}}">Home</a></li>
+                                <li><a href="{{route('product.shop')}}">Shop</a></li>
+                                <li><a href="{{route('blog')}}">Blog</a></li>
                             </ul>
                         </div>
                     </div>
-                    <!-- footer widget item end -->
 
-                    <!-- footer widget item start -->
-                    <div class="col-lg-2 offset-lg-1 col-md-6 col-sm-6">
-                        <div class="footer-widget-item mb-30">
-                            <div class="footer-widget-title">
-                                <h5>Quick Links</h5>
-                            </div>
-                            <ul class="footer-widget-body">
-                                <li><a href="#">Store Location</a></li>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Orders Tracking</a></li>
-                                <li><a href="#">Size Guide</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- footer widget item end -->
                 </div>
             </div>
         </div>
@@ -544,24 +523,24 @@
                         @else
                             <?php $s = 1 ?>
                             @foreach($cart->items as $key => $cartOne)
-                        <li class="minicart-item">
-                            <div class="minicart-thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/cart/cart-1.jpg" alt="product">
-                                </a>
-                            </div>
-                            <div class="minicart-content">
-                                <h3 class="product-name">
-                                    <a href="product-details.html">{{$cartOne['name']}}</a>
-                                </h3>
-                                <p>
-                                    <span class="cart-quantity">{{$cartOne['quantity']}}<strong>&times;</strong></span>
-                                    <span class="cart-price">{{number_format($cartOne['price'])}} VND</span>
-                                </p>
-                            </div>
-                            <a href="{{route('cart.remove', $cartOne['id'])}}" class="minicart-remove"><i class="lnr lnr-cross"></i></a>
-                        </li>
-                                @endforeach
+                                <li class="minicart-item">
+                                    <div class="minicart-thumb">
+                                        <a href="product-details.html">
+                                            <img src="assets/img/cart/cart-1.jpg" alt="product">
+                                        </a>
+                                    </div>
+                                    <div class="minicart-content">
+                                        <h3 class="product-name">
+                                            <a href="product-details.html">{{$cartOne['name']}}</a>
+                                        </h3>
+                                        <p>
+                                            <span class="cart-quantity">{{$cartOne['quantity']}}<strong>&times;</strong></span>
+                                            <span class="cart-price">{{number_format($cartOne['price'])}} VND</span>
+                                        </p>
+                                    </div>
+                                    <a href="{{route('cart.remove', $cartOne['id'])}}" class="minicart-remove"><i class="lnr lnr-cross"></i></a>
+                                </li>
+                            @endforeach
                         @endif
                     </ul>
                 </div>
@@ -590,13 +569,32 @@
     <i class="fa fa-angle-up"></i>
 </div>
 <!-- Scroll to Top End -->
-
+@notify_render
 <!-- All vendor & plugins & active js include here -->
 <!--All Vendor Js -->
+<script>
+    $(function () {
+        $('#orderby').change(function () {
+            $("#form_order").submit();
+        })
+
+    })
+</script>
 <script src="{{asset('assets/js/vendor.js')}}"></script>
 <!-- Active Js -->
 <script src="{{asset('assets/js/active.js')}}"></script>
 <script src="{{asset('js/cart.js')}}"></script>
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5ee6fde59e5f694422908eca/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
 {{--<script>--}}
 {{--    Swal.fire(--}}
 {{--        'Good job!',--}}
@@ -609,4 +607,3 @@
 {{--<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>--}}
 </body>
 </html>
-

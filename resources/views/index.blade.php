@@ -26,7 +26,7 @@
                                         <span>valentine gift</span>
                                         <h1>Fresh Your Mind</h1>
                                         <h2>& Feeling love</h2>
-                                        <a href="shop.html" class="btn-hero">shop now</a>
+                                        <a href="shop.html" style="background: rgb(131,30,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" class="btn-hero">shop now</a>
                                     </div>
                                 </div>
                             </div>
@@ -100,152 +100,7 @@
         <!-- service policy end -->
 
         <!-- trending product area start -->
-        <section class="deals-area section-space pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title text-center">
-                            <h2>Deals Of The Month</h2>
-                            <p>Accumsan vitae pede lacus ut ullamcorper sollicitudin quisque libero</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="product-deal-carousel--2 slick-row-15 slick-sm-row-10 slick-arrow-style">
-                            <!-- product single item start -->
-                            <div class="deal-slide">
-                                <div class="product-item deal-item">
-                                    <figure class="product-thumb">
-                                        <a href="product-details.html">
-                                            <img class="pri-img" src="assets/img/product/product-13.jpg" alt="product">
-                                            <img class="sec-img" src="assets/img/product/product-7.jpg" alt="product">
-                                        </a>
-                                        <div class="product-badge">
-                                            <div class="product-label new">
-                                                <span>new</span>
-                                            </div>
-                                        </div>
-                                        <div class="button-group">
-                                            <a href="wishlist.html" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-caption product-deal-content">
-                                        <p class="product-name">
-                                            <a href="product-details.html">Blossom bouquet flower</a>
-                                        </p>
-                                        <div class="ratings d-flex mb-1">
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="price-regular">$40.00</span>
-                                            <span class="price-old"><del>$60.00</del></span>
-                                        </div>
-                                        <div class="countdown-titmer mt-3">
-                                            <h5 class="offer-text"><strong class="text-danger">Hurry up</strong>! offer ends in:</h5>
-                                            <div class="product-countdown" data-countdown="2020/05/20"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- product single item end -->
 
-                            <!-- product single item start -->
-                            <div class="deal-slide">
-                                <div class="product-item deal-item">
-                                    <figure class="product-thumb">
-                                        <a href="product-details.html">
-                                            <img class="pri-img" src="assets/img/product/product-6.jpg" alt="product">
-                                            <img class="sec-img" src="assets/img/product/product-9.jpg" alt="product">
-                                        </a>
-                                        <div class="product-badge">
-                                            <div class="product-label new">
-                                                <span>new</span>
-                                            </div>
-                                        </div>
-                                        <div class="button-group">
-                                            <a href="wishlist.html" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-caption product-deal-content">
-                                        <p class="product-name">
-                                            <a href="product-details.html">Jasmine flowers white</a>
-                                        </p>
-                                        <div class="ratings d-flex mb-1">
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="price-regular">$50.00</span>
-                                            <span class="price-old"><del>$70.00</del></span>
-                                        </div>
-                                        <div class="countdown-titmer mt-3">
-                                            <h5 class="offer-text"><strong class="text-danger">Hurry up</strong>! offer ends in:</h5>
-                                            <div class="product-countdown" data-countdown="2020/04/25"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- product single item end -->
-
-                            <!-- product single item start -->
-                            <div class="deal-slide">
-                                <div class="product-item deal-item">
-                                    <figure class="product-thumb">
-                                        <a href="product-details.html">
-                                            <img class="pri-img" src="assets/img/product/product-14.jpg" alt="product">
-                                            <img class="sec-img" src="assets/img/product/product-8.jpg" alt="product">
-                                        </a>
-                                        <div class="product-badge">
-                                            <div class="product-label new">
-                                                <span>new</span>
-                                            </div>
-                                        </div>
-                                        <div class="button-group">
-                                            <a href="wishlist.html" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-caption product-deal-content">
-                                        <p class="product-name">
-                                            <a href="product-details.html">Flowers daisy pink stick</a>
-                                        </p>
-                                        <div class="ratings d-flex mb-1">
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="price-regular">$35.00</span>
-                                            <span class="price-old"><del>$45.00</del></span>
-                                        </div>
-                                        <div class="countdown-titmer mt-3">
-                                            <h5 class="offer-text"><strong class="text-danger">Hurry up</strong>! offer ends in:</h5>
-                                            <div class="product-countdown" data-countdown="2020/03/25"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- product single item end -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!-- trending product area end -->
 
         <!-- banner statistics start -->
@@ -262,7 +117,7 @@
                                 <figcaption class="banner-content banner-content-right">
                                     <h2 class="text1">for you</h2>
                                     <h2 class="text2">Tulip Flower</h2>
-                                    <a class="store-link" href="#">shop now</a>
+                                    <a class="store-link" href="{{route('product.shop')}}">shop now</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -296,8 +151,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title text-center">
-                            <h2>San pham moi</h2>
-                            <p>Accumsan vitae pede lacus ut ullamcorper sollicitudin quisque libero</p>
+                            <h2>Sản phẩm mới</h2>
                         </div>
                     </div>
                 </div>
@@ -311,13 +165,11 @@
                                     <img class="pri-img" id="img-{{$value->id}}" src="{{asset('assets/img/product/product-1.jpg')}}" alt="product">
                                     <img class="sec-img" src="assets/img/product/product-2.jpg" alt="product">
                                 </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
+                                <div  class="product-badge">
+                                    <div style="background: rgb(131,30,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" class="product-label new">
+                                        <span >new</span>
                                     </div>
-                                    <div class="product-label discount">
-                                        <span>10%</span>
-                                    </div>
+
                                 </div>
                                 <div class="button-group">
                                     <a href="{{route('wishlist.add',['id'=>$value->id])}}" data-toggle="tooltip" data-placement="left" title="Yêu thích"><i class="lnr lnr-heart"></i></a>
@@ -342,7 +194,7 @@
 
                     <div class="col-12">
                         <div class="view-more-btn">
-                            <a class="btn-hero btn-load-more" href="shop.html">view more products</a>
+                            <a style="background: rgb(131,30,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" class="btn-hero btn-load-more" href="{{route('product.shop')}}">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -351,64 +203,55 @@
         <!-- our product area end -->
 
         <!-- banner statistics start -->
-        <section class="banner-statistics">
+        <section class="testimonial-area section-space bg-img" data-bg="assets/img/testimonial/testimonials-bg.jpg">
             <div class="container">
-                <div class="row mbn-30">
-                    <!-- start store item -->
-                    <div class="col-md-4">
-                        <div class="banner-item mb-30">
-                            <figure class="banner-thumb">
-                                <a href="#">
-                                    <img src="assets/img/banner/img1-top-floda1.jpg" alt="">
-                                </a>
-                                <figcaption class="banner-content">
-                                    <h2 class="text1">Top friday</h2>
-                                    <h2 class="text2">Yellow Gold</h2>
-                                    <a class="store-link" href="#">buy it now</a>
-                                </figcaption>
-                            </figure>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- section title start -->
+                        <div class="section-title text-center">
+                            <h2 class="title">Phản hồi</h2>
+                            <p class="sub-title">Họ nói gì</p>
                         </div>
+                        <!-- section title start -->
                     </div>
-                    <!-- start store item -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="testimonial-thumb-wrapper">
+                            <div class="testimonial-thumb-carousel">
+                                <div class="testimonial-thumb">
+                                    <img src="assets/img/testimonial/testimonial-1.png" alt="testimonial-thumb">
+                                </div>
+                                <div class="testimonial-thumb">
+                                    <img src="assets/img/testimonial/testimonial-2.png" alt="testimonial-thumb">
+                                </div>
+                                <div class="testimonial-thumb">
+                                    <img src="assets/img/testimonial/testimonial-3.png" alt="testimonial-thumb">
+                                </div>
+                                <div class="testimonial-thumb">
+                                    <img src="assets/img/testimonial/testimonial-1.png" alt="testimonial-thumb">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-wrapper">
+                            <div class="testimonial-content-carousel">
+                                <div class="testimonial-content">
+                                    <p>Vivamus a lobortis ipsum, vel condimentum magna. Etiam id turpis tortor. Nunc scelerisque, nisi a blandit varius, nunc purus venenatis ligula, sed venenatis orci augue nec sapien. Cum sociis natoque</p>
 
-                    <!-- start store item -->
-                    <div class="col-md-4">
-                        <div class="banner-item mb-30">
-                            <figure class="banner-thumb">
-                                <a href="#">
-                                    <img src="assets/img/banner/img1-top-floda2.jpg" alt="">
-                                </a>
-                                <figcaption class="banner-content text-center">
-                                    <h2 class="text1">Black friday</h2>
-                                    <h2 class="text2">Orchid stick</h2>
-                                    <a class="store-link" href="#">buy it now</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <!-- start store item -->
+                                    <h5 class="testimonial-author">lindsy niloms</h5>
+                                </div>
 
-                    <!-- start store item -->
-                    <div class="col-md-4">
-                        <div class="banner-item mb-30">
-                            <figure class="banner-thumb">
-                                <a href="#">
-                                    <img src="assets/img/banner/img1-top-floda3.jpg" alt="">
-                                </a>
-                                <figcaption class="banner-content">
-                                    <h2 class="text1">10% off</h2>
-                                    <h2 class="text2">tulip flower</h2>
-                                    <a class="store-link" href="#">buy it now</a>
-                                </figcaption>
-                            </figure>
+
+
+                            </div>
                         </div>
                     </div>
-                    <!-- start store item -->
                 </div>
             </div>
         </section>
         <!-- banner statistics end -->
 {{--        -----------------------------------------------------------------------------Xu hướng sản phẩm------------------------------}}
+        <!-- trending product area start -->
         <!-- trending product area start -->
         <section class="top-sellers section-space">
             <div class="container">
@@ -416,43 +259,45 @@
                     <div class="col-12">
                         <div class="section-title text-center">
                             <h2>Xu hướng sản phẩm</h2>
-                            <p>Accumsan vitae pede lacus ut ullamcorper sollicitudin quisque libero</p>
+
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product-carousel--4 slick-row-15 slick-sm-row-10 slick-arrow-style">
-
                             <!-- product single item start -->
-                            <div class="product-item">
-                                <figure class="product-thumb">
-                                    <a href="product-details.html">
-                                        <img class="pri-img" src="assets/img/product/product-14.jpg" alt="product">
-                                        <img class="sec-img" src="assets/img/product/product-8.jpg" alt="product">
-                                    </a>
-                                    <div class="product-badge">
-                                        <div class="product-label new">
-                                            <span>new</span>
+                            @foreach($top_product as $items)
+                                <div class="product-item">
+                                    <figure class="product-thumb">
+                                        <a href="product-details.html">
+                                            <img class="pri-img" src="assets/img/product/product-14.jpg" alt="product">
+                                            <img class="sec-img" src="assets/img/product/product-8.jpg" alt="product">
+                                        </a>
+                                        <div class="product-badge">
+                                            <div  style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" class="product-label new">
+                                                <span>new</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <a href="{{route('wishlist.add',$items->id)}}" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
+                                            <a href="#" data-toggle="modal" data-target="#quick_view{{$items->id}}"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
+                                            <a href="{{route('cart.add',$items->id)}}" data-toggle="tooltip" data-placement="left" title="Them vao gio hang"><i class="lnr lnr-cart"></i></a>
+                                        </div>
+                                    </figure>
+                                    <div class="product-caption">
+                                        <p class="product-name">
+                                            <a href="product-details.html">{{$items->name}}}</a>
+                                        </p>
+                                        <div class="price-box">
+                                            <span class="price-regular">{{number_format($items->price)}} .VND</span>
+
                                         </div>
                                     </div>
-                                    <div class="button-group">
-                                        <a href="wishlist.html" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Them vao gio hang"><i class="lnr lnr-cart"></i></a>
-                                    </div>
-                                </figure>
-                                <div class="product-caption">
-                                    <p class="product-name">
-                                        <a href="product-details.html">Blossom bouquet flower</a>
-                                    </p>
-                                    <div class="price-box">
-                                        <span class="price-regular">$50.00</span>
-                                        <span class="price-old"><del>$80.00</del></span>
-                                    </div>
                                 </div>
-                            </div>
-                            <!-- product single item end -->
+                            {{--                            @include('store.modalHot')--}}
+                        @endforeach
+                        <!-- product single item end -->
 
 
                         </div>
@@ -464,10 +309,8 @@
 
         <!-- Instagram Feed Area Start -->
         <div class="instagram-feed-area">
-            <div class="container">
-                <div class="instagram-feed-thumb">
-                    <div id="instafeed" class="instagram-carousel" data-userid="6666969077" data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
-                    </div>
+            <div class="instagram-feed-thumb">
+                <div id="instafeed" class="instagram-carousel" data-userid="6666969077" data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
                 </div>
             </div>
         </div>
