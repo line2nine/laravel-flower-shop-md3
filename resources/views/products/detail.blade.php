@@ -15,18 +15,18 @@
         <div class="col-lg-4">
             <div class="card profile-card-2">
                 <div class="card-img-block">
-                    <img class="img-fluid" src="{{asset('storage/'.$product->image)}}"
+                    <img class="img-fluid" src="{{asset('storage/'.$product2->image)}}"
                          alt="Card image cap">
                 </div>
                 <div class="card-body pt-5">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="profile-image" class="profile">
-                    <h5 class="card-title">{{$product->name}}</h5>
+                    <img src="{{asset('storage/'.$product2->image)}}" alt="profile-image" class="profile">
+                    <h5 class="card-title">{{$product2->name}}</h5>
 
                         <p class="card-text">Product</p>
 
                 </div>
             </div>
-            <a class="btn btn-primary btn-round px-3" href="{{route('product.edit',['id'=>$product->id])}}"><i class="icon-settings"></i>
+            <a class="btn btn-primary btn-round px-3" href="{{route('product.edit',['id'=>$product2->id])}}"><i class="icon-settings"></i>
                 Edit
             </a>
             <a class="btn btn-light btn-round px-3" href="{{route('product.index')}}"><i class="icon-logout"></i>
@@ -50,23 +50,23 @@
                                 <div class="col-md-6">
                                     <h6>Name</h6>
                                     <p>
-                                        {{$product->name}}
+                                        {{$product2->name}}
                                     </p>
                                     <h6>Price</h6>
                                     <p>
-                                        {{$product->price}}
+                                        {{$product2->price}}
                                     </p>
                                     <h6>Create</h6>
                                     <p>
-                                        {{$product->created_at}}
+                                        {{$product2->created_at}}
                                     </p>
                                     <h6>Category</h6>
                                     <p>
-                                        {{$product->category->name}}
+                                        {{$product2->category->name}}
                                     </p>
                                     <h6>Description</h6>
                                     <p>
-                                        {{$product->description}}
+                                        {{$product2->description}}
                                     </p>
                                 </div>
                             </div>

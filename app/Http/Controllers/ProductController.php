@@ -43,8 +43,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $categories = $this->categoryService->getAll();
-        $product = $this->productService->find($id);
-        return view('products.edit', compact('product', 'categories'));
+        $product1 = $this->productService->find($id);
+        return view('products.edit', compact('product1', 'categories'));
     }
 
     public function update(UpdateProductRequest $request, $id)
@@ -65,7 +65,7 @@ class ProductController extends Controller
 
     public function detail($id)
     {
-        $product = $this->productService->find($id);
-        return view('products.detail', compact('product'));
+        $product2 = $this->productService->find($id);
+        return view('products.detail', compact('product2'));
     }
 }

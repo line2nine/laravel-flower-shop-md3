@@ -22,21 +22,22 @@
                         </p>
                     @endif
                     <hr>
-                    <form method="post" action="{{route('product.update',['id'=>$product->id])}}" enctype="multipart/form-data">
+{{--                    {{dd($product)}}--}}
+                    <form method="post" action="{{route('product.update',['id'=>$product1->id])}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="input-1">Name Product</label>
-                            <input type="text" class="form-control" id="input-1" name="name" value="{{$product->name}}"
+                            <input type="text" class="form-control" id="input-1" name="name" value="{{$product1->name}}"
                                    placeholder="Enter Your Name">
                         </div>
                         <div class="form-group">
                             <label for="input-2">Price Product</label>
-                            <input type="text" class="form-control" id="input-2" name="price" value="{{$product->price}}"
+                            <input type="text" class="form-control" id="input-2" name="price" value="{{$product1->price}}"
                                    placeholder="Enter Your Price">
                         </div>
                         <div class="form-group">
                             <label for="input-4">Image Product</label>
-                            <img src="{{asset('storage/'.$product->image)}}" style="width: 50px;" alt="anh cu">
+                            <img src="{{asset('storage/'.$product1->image)}}" style="width: 50px;" alt="anh cu">
                             <input type="file" class="form-control" id="input-4" name="image">
                         </div>
                         <div class="form-group">
@@ -45,7 +46,7 @@
                                 <select class="form-control" id="basic-select" name="category">
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}"
-                                        @if($category->id == $product->category_id)
+                                        @if($category->id == $product1->category_id)
                                             selected
                                             @endif
                                         >
@@ -58,12 +59,11 @@
                         <div class="form-group">
                             <label for="input-9" class="col-md-12 col-form-label">Description Product</label>
                             <div class="col-md-12">
-                                <textarea class="form-control" rows="4" id="input-9" name="description">{!! $product->description !!}</textarea>
+                                <textarea class="form-control" rows="4" id="input-9" name="description">{!! $product1->description !!}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Update
-                            </button>
+                            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Update</button>
                             <a class="btn btn-light" href="{{route('product.index')}}">Cancel</a>
                         </div>
                     </form>

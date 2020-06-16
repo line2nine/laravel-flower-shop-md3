@@ -42,33 +42,33 @@
                                             <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img2.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}"    alt="product-details" />
                                         </div>
                                         <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img3.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img4.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img5.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                     </div>
                                     <div class="pro-nav slick-row-10 slick-arrow-style">
                                         <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img1.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img2.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img3.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img4.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                         <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img5.jpg" alt="product-details" />
+                                            <img src="{{asset('assets/img/product/product-details-img1.jpg')}}" alt="product-details" />
                                         </div>
                                     </div>
                                 </div>

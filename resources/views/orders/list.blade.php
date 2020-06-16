@@ -2,31 +2,12 @@
 @section('content')
     <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-            <h4 class="page-title">Users List</h4>
+            <h4 class="page-title">Orders List</h4>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('user.list')}}">List</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Users List</li>
+                <li class="breadcrumb-item"><a href="{{route('order.list')}}">List</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Orders List</li>
             </ol>
-        </div>
-        <div class="col-sm-3">
-            <div class="btn-group float-sm-right">
-                <button type="button" class="btn btn-light waves-effect waves-light"><i class="fa fa-cog mr-1"></i>
-                    Setting
-                </button>
-                <button type="button"
-                        class="btn btn-light dropdown-toggle dropdown-toggle-split waves-effect waves-light"
-                        data-toggle="dropdown">
-                    <span class="caret"></span>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="javaScript:void();" class="dropdown-item">Action</a>
-                    <a href="javaScript:void();" class="dropdown-item">Another action</a>
-                    <a href="javaScript:void();" class="dropdown-item">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="javaScript:void();" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -40,38 +21,35 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Image</th>
                                 <th scope="col">Product Name</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Chi tiết</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($orders as $key => $order)
+
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
-                                    <td><img src="" class="avatar"></td>
                                     <td>
-                                        <a href="#"></a>
+                                        <a href="#">{{$order->name}}</a>
                                     </td>
-                                    <td>{{$order->orderDetail->quantity}}</td>
-                                    <td>{{$order->orderDetail->price}}</td>
-                                    <td>
-                                        <a class="btn btn-white btn-round px-2"
-                                           href="#"><i class="icon-settings"></i>
-                                            Edit
-                                        </a>
-                                        <a class="btn btn-danger btn-round px-2"
-                                           onclick="return confirm('Are You Sure?')"
-                                           href="#"><i class="icon-trash"></i>
-                                            Delete
-                                        </a>
-                                    </td>
+                                    <td>{{$order->phone}}</td>
+
+                                    @if($order->status==0)
+                                        <td><a class="text-danger">Đang Xử Lý</a></td>
+                                    @elseif($order->status==1)
+                                        <td><a class="text-info">Đang giao hàng</a></td>
+                                    @else
+                                        <td><a class="text-success">Đơn hàng hoàn thành</a></td>
+                                    @endif
+                                    <td><a href="{{route('order.detail', $order->id)}}" ><i class="icon-eye icons" > Chi tiết</i></a></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                        {{$orders->links()}}
                     </div>
                 </div>
             </div>
