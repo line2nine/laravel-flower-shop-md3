@@ -28,6 +28,4 @@ class HomeController extends Controller
 //       dd($productSearch);
         return view('store.search', compact('productSearch'));
     }
-
-
 }

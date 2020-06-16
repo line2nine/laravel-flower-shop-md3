@@ -67,7 +67,7 @@ $(document).ready(function () {
         if ($(this).val() > 0) {
             $.ajax({
                 url: '/cart/update/' + productId,
-                data: {"quantity": $(this).val()},
+                data: { "quantity": $(this).val() },
                 dataType: 'json',
                 success: function (result) {
                     if (result.status == 'success') {
