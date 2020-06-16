@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $top_product = Product::limit(6)->orderBy('id','DESC')->get();
         $hot_product = Product::limit(12)->orderBy('id','DESC')->get();
-        return view('index',compact('category','top_product','hot_product'));
+        return view('index',compact('top_product','hot_product'));
 
     }
     public function search(Request $request){
