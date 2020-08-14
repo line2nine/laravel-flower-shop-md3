@@ -64,11 +64,11 @@ class CheckoutController extends Controller
                 'email'=>$request->email,
             ];
             $email = [
-                'xuanhoa93thds@gmail.com',
+                'linhibeh@gmail.com',
                 $data['email']
             ];
             Mail::send('email.viewEmail',$data,function ($mes) use ($data,$email ){
-                $mes->from('xuanhoa93thds@gmail.com');
+                $mes->from('linhibeh@gmail.com');
                 $mes->to($email,'email.viewEmail')->subject('Cảm ơn quý khách');
             });
             session(['cart' => '']);

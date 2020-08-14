@@ -9,11 +9,12 @@
 </head>
 <body>
 
-<h3>Dat hang thanh cong</h3>
-<table>
+<h3>Quý khách nhận được mail này vì đã đặt hàng thành công trên hệ thống của Floda</h3>
+<br>
+<p>Đơn hàng của quý khác được xác nhận như sau:</p>
+<table style="border: 1px black solid">
     <thead>
     <tr>
-
         <th>Tên sản phẩm</th>
         <th>Số lượng</th>
         <th>Giá</th>
