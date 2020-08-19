@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\store;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Account;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    use AuthenticatesUsers;
 
     public function showFormLogin()
     {
@@ -25,16 +27,18 @@ class AuthController extends Controller
     {
         $email = $requests->email;
         $password = $requests->password;
+        $device_token = $requests->device_token;
 
         $user = [
             'email' => $email,
-            'password' => $password
+            'password' => $password,
         ];
         if (Auth::attempt($user)) {
-
+            \auth()->guard()->user()->update(['device_token' => $device_token]);
             $message = "dang nhap thanh cong";
             session()->flash('login-success', $message);
             return redirect()->route('index');
+//            return redirect()->intended($this->redirectPath());
 
 
         } else {

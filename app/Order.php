@@ -15,4 +15,9 @@ class Order extends Model
     {
         return $this->hasOne(OrderDetail::class,'order_id');
     }
+
+    public function notification()
+    {
+        return $this->belongsTo(Notification::class, 'order_id');
+    }
 }

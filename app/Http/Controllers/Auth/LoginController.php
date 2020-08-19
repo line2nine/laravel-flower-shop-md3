@@ -49,6 +49,7 @@ class LoginController extends Controller
     {
         $username = $request->username;
         $password = $request->password;
+//        $device_token = $request->device_token;
 
         $user = [
             'email' => $username,
@@ -56,6 +57,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($user)) {
+//            \auth()->guard()->user()->update(['device_token' => $device_token]);
             notify("Long time no see, let work!!!", 'success', 'Welcome!');
             return redirect()->route('admin.dashboard');
         } else {

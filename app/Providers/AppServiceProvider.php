@@ -10,6 +10,8 @@ use App\Order;
 use App\Product;
 use App\OrderDetail;
 use Illuminate\Support\ServiceProvider;
+use App\Notification;
+use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -68,5 +70,6 @@ class AppServiceProvider extends ServiceProvider
             ]);
 
         });
+        \Illuminate\Support\Facades\View::share('numberAlert', Notification::numberAlert());
     }
 }

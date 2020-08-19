@@ -21,6 +21,17 @@
     <link href="{{asset('css/toastr.css')}}" rel="stylesheet">
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="{{asset('js/toastr.js')}}"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase.js"></script>
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+
     @notify_css
     @notify_js
 
@@ -572,6 +583,8 @@
 @notify_render
 <!-- All vendor & plugins & active js include here -->
 <!--All Vendor Js -->
+<script src="{{asset('js/firebase.js')}}"></script>
+
 <script>
     $(function () {
         $('#orderby').change(function () {

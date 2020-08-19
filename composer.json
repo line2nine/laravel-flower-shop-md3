@@ -10,17 +10,17 @@
     "require": {
         "php": "^7.2.5",
         "ext-mongodb": "*",
+        "apility/laravel-fcm": "^1.4",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "kreait/firebase-php": "^5.7",
+        "kreait/laravel-firebase": "^2.2",
         "laravel/framework": "^7.0",
         "laravel/socialite": "^4.4",
         "laravel/tinker": "^2.0",
-
-        "mongodb/mongodb": "^1.6",
-
         "laravel/ui": "^2.0",
-
+        "mongodb/mongodb": "^1.7",
         "realrashid/sweet-alert": "^3.1",
         "yoeunes/notify": "^1.0"
     },

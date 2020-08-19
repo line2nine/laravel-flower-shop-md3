@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="icon" href="{{asset('/images/favicon.ico')}}" type="image/x-icon">
     <!-- Vector CSS -->
     <link href="{{asset('/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet"/>
@@ -24,9 +25,19 @@
     <!--Data Tables -->
     <link href="{{asset('plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js"></script>
+
     @notify_css
     @notify_js
-    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+{{--    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>--}}
     <title>Dashboard</title>
 </head>
 <body class="bg-theme bg-theme2">
@@ -53,6 +64,9 @@
 </div>
 
 @notify_render
+<script src="{{asset('js/firebase.js')}}"></script>
+
+
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
@@ -82,6 +96,12 @@
 
 <script>
     $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         //Default data table
         $('#default-datatable').DataTable();
         var table = $('#example').DataTable( {
@@ -90,19 +110,31 @@
         } );
         table.buttons().container()
             .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+
+        $('.show-order').on('click', function () {
+            $.ajax({
+                url: '{{route('order.read')}}',
+                type: 'POST',
+                dataType: 'html',
+                success: function (result) {
+                    console.log(result)
+                    $('.show-message').html(result)
+                }
+            })
+        })
     } );
 </script>
 
-<script src="{{asset('plugins/Chart.js/Chart.min.js')}}"></script>
+{{--<script src="{{asset('plugins/Chart.js/Chart.min.js')}}"></script>--}}
 <!-- Vector map JavaScript -->
 <script src="{{asset('plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
 <script src="{{asset('plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- Easy Pie Chart JS -->
-<script src="{{asset('plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>
+{{--<script src="{{asset('plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>--}}
 <!-- Sparkline JS -->
-<script src="{{asset('plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-knob/excanvas.js')}}"></script>
-<script src="{{asset('plugins/jquery-knob/jquery.knob.js')}}"></script>
+{{--<script src="{{asset('plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>--}}
+{{--<script src="{{asset('plugins/jquery-knob/excanvas.js')}}"></script>--}}
+{{--<script src="{{asset('plugins/jquery-knob/jquery.knob.js')}}"></script>--}}
 <script>
     $(function () {
         $(".knob").knob();
@@ -114,6 +146,11 @@
 <script src="{{asset('js/index.js')}}"></script>
 <script>
     CKEDITOR.replace( 'editor1' );
+</script>
+<script>
+    $(document).ready(function () {
+
+    })
 </script>
 </body>
 </html>

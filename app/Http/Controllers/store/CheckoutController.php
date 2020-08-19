@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\store;
+
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Cart\Cart;
 use App\Order;
-
 use App\OrderDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Notification;
 
 class CheckoutController extends Controller
 {
@@ -17,13 +19,14 @@ class CheckoutController extends Controller
     {
     }
 
-    public function form(){
+    public function form()
+    {
         return view('store.checkout');
     }
 
 
-    public function submit_form(Request $request, Cart $cart ){
-
+    public function submit_form(Request $request, Cart $cart)
+    {
         $user_id = Auth::id();
         $order_note = $request->input("note");
         $name = $request->input("name");
@@ -33,48 +36,53 @@ class CheckoutController extends Controller
         $total_price = $request->input("total_price");
         $email = $request->input("email");
 
-
-
-
         if ($orders = Order::create([
             'name' => $name,
             'phone' => $phone,
             'address' => $address,
             'user_id' => $user_id,
-            'order_note' =>$order_note,
+            'order_note' => $order_note,
             'paymentmethod' => $paymentmethod,
             'total_price' => $total_price,
             'email' => $email,
-
         ])) {
 
             $order_id = $orders->id;
-            foreach ($cart-> items as $product_id =>$item){
+            foreach ($cart->items as $product_id => $item) {
                 $quantity = $item['quantity'];
                 $price = $item['price'];
                 OrderDetail::create([
-                    'order_id' => $order_id ,
+                    'order_id' => $order_id,
                     'product_id' => $product_id,
                     'quantity' => $quantity,
-                    'price' =>$price
+                    'price' => $price
                 ]);
             }
             $data = [
                 'name' => $request->name,
-                'email'=>$request->email,
+                'email' => $request->email,
             ];
             $email = [
                 'linhibeh@gmail.com',
                 $data['email']
             ];
-            Mail::send('email.viewEmail',$data,function ($mes) use ($data,$email ){
+            Mail::send('email.viewEmail', $data, function ($mes) use ($data, $email) {
                 $mes->from('linhibeh@gmail.com');
-                $mes->to($email,'email.viewEmail')->subject('Cảm ơn quý khách');
+                $mes->to($email, 'email.viewEmail')->subject('Cảm ơn quý khách');
             });
             session(['cart' => '']);
+
+            $noti = new Notification;
+            $noti->user_id = $user_id;
+            $noti->order_id = $order_id;
+            $url = route('order.detail', $order_id);
+            if ($noti->save()) {
+                $noti->toMultiDevice(User::all(), 'title', 'body', null, $url);
+            }
+
 //            $message = "dat hang thanh cong";
 //            session()->flash('order-success',$message);
-            toast('Success', 'success','top-center');
+            toast('Success', 'success', 'top-center');
             return redirect()->route('index');
 
         } else {

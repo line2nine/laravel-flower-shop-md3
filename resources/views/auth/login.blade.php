@@ -56,6 +56,7 @@
                                     </div>
                                     <div class="single-input-item">
                                         <div class="row">
+                                            <input type="hidden" name="device_token" id="device_token">
                                             <button type="submit" class="btn btn__bg" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">Đăng nhập</button>
                                             &nbsp
                                             &nbsp
